@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B1C9E7A2D5A15CA00CA7861 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E792D5A15CA00CA7861 /* MainView.swift */; };
+		2B1C9E7C2D5A162E00CA7861 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E7B2D5A162E00CA7861 /* GraphView.swift */; };
+		2B1C9E802D5A170700CA7861 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E7F2D5A170700CA7861 /* DataSource.swift */; };
+		2B2854012D57A2CE009E86E9 /* SugarScopeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854002D57A2CE009E86E9 /* SugarScopeApp.swift */; };
+		2B2854032D57A2CE009E86E9 /* ColoredLineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854022D57A2CE009E86E9 /* ColoredLineGraph.swift */; };
+		2B2854052D57A2D0009E86E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B2854042D57A2D0009E86E9 /* Assets.xcassets */; };
+		2B2854102D57A40E009E86E9 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B28540F2D57A40E009E86E9 /* Calendar.swift */; };
+		2B2854122D57A718009E86E9 /* GlucoseMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854112D57A718009E86E9 /* GlucoseMeasurement.swift */; };
+		2B2854142D57B4BC009E86E9 /* SugarScopeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854132D57B4BC009E86E9 /* SugarScopeDataSource.swift */; };
+		2B2854162D58AECF009E86E9 /* NightscoutDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854152D58AECF009E86E9 /* NightscoutDataSource.swift */; };
+		2B2854182D58B64F009E86E9 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854172D58B64F009E86E9 /* Double.swift */; };
+		2B28541A2D58BA36009E86E9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854192D58BA36009E86E9 /* Logger.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2B1C9E792D5A15CA00CA7861 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2B1C9E7B2D5A162E00CA7861 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		2B1C9E7F2D5A170700CA7861 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		2B2853FD2D57A2CE009E86E9 /* SugarScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SugarScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B2854002D57A2CE009E86E9 /* SugarScopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarScopeApp.swift; sourceTree = "<group>"; };
+		2B2854022D57A2CE009E86E9 /* ColoredLineGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredLineGraph.swift; sourceTree = "<group>"; };
+		2B2854042D57A2D0009E86E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2B28540F2D57A40E009E86E9 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		2B2854112D57A718009E86E9 /* GlucoseMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseMeasurement.swift; sourceTree = "<group>"; };
+		2B2854132D57B4BC009E86E9 /* SugarScopeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarScopeDataSource.swift; sourceTree = "<group>"; };
+		2B2854152D58AECF009E86E9 /* NightscoutDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutDataSource.swift; sourceTree = "<group>"; };
+		2B2854172D58B64F009E86E9 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		2B2854192D58BA36009E86E9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2B2853FA2D57A2CE009E86E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B1C9E782D5A15B000CA7861 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2B2854022D57A2CE009E86E9 /* ColoredLineGraph.swift */,
+				2B1C9E792D5A15CA00CA7861 /* MainView.swift */,
+				2B1C9E7B2D5A162E00CA7861 /* GraphView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2B1C9E7D2D5A16E800CA7861 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B2854112D57A718009E86E9 /* GlucoseMeasurement.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B1C9E7E2D5A16EE00CA7861 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2B2854152D58AECF009E86E9 /* NightscoutDataSource.swift */,
+				2B2854132D57B4BC009E86E9 /* SugarScopeDataSource.swift */,
+				2B1C9E7F2D5A170700CA7861 /* DataSource.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2B2853F42D57A2CE009E86E9 = {
+			isa = PBXGroup;
+			children = (
+				2B2853FF2D57A2CE009E86E9 /* SugarScope */,
+				2B2853FE2D57A2CE009E86E9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2B2853FE2D57A2CE009E86E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B2853FD2D57A2CE009E86E9 /* SugarScope.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2B2853FF2D57A2CE009E86E9 /* SugarScope */ = {
+			isa = PBXGroup;
+			children = (
+				2B1C9E7E2D5A16EE00CA7861 /* Data */,
+				2B1C9E7D2D5A16E800CA7861 /* Model */,
+				2B1C9E782D5A15B000CA7861 /* Views */,
+				2B2854002D57A2CE009E86E9 /* SugarScopeApp.swift */,
+				2B2854042D57A2D0009E86E9 /* Assets.xcassets */,
+				2B28540E2D57A3FF009E86E9 /* Extensions */,
+			);
+			path = SugarScope;
+			sourceTree = "<group>";
+		};
+		2B28540E2D57A3FF009E86E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2B28540F2D57A40E009E86E9 /* Calendar.swift */,
+				2B2854172D58B64F009E86E9 /* Double.swift */,
+				2B2854192D58BA36009E86E9 /* Logger.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2B2853FC2D57A2CE009E86E9 /* SugarScope */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B28540B2D57A2D0009E86E9 /* Build configuration list for PBXNativeTarget "SugarScope" */;
+			buildPhases = (
+				2B2853F92D57A2CE009E86E9 /* Sources */,
+				2B2853FA2D57A2CE009E86E9 /* Frameworks */,
+				2B2853FB2D57A2CE009E86E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SugarScope;
+			productName = SugarScope;
+			productReference = 2B2853FD2D57A2CE009E86E9 /* SugarScope.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2B2853F52D57A2CE009E86E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					2B2853FC2D57A2CE009E86E9 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 2B2853F82D57A2CE009E86E9 /* Build configuration list for PBXProject "SugarScope" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2B2853F42D57A2CE009E86E9;
+			productRefGroup = 2B2853FE2D57A2CE009E86E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2B2853FC2D57A2CE009E86E9 /* SugarScope */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2B2853FB2D57A2CE009E86E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B2854052D57A2D0009E86E9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2B2853F92D57A2CE009E86E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B2854032D57A2CE009E86E9 /* ColoredLineGraph.swift in Sources */,
+				2B1C9E7A2D5A15CA00CA7861 /* MainView.swift in Sources */,
+				2B2854102D57A40E009E86E9 /* Calendar.swift in Sources */,
+				2B2854142D57B4BC009E86E9 /* SugarScopeDataSource.swift in Sources */,
+				2B2854012D57A2CE009E86E9 /* SugarScopeApp.swift in Sources */,
+				2B1C9E7C2D5A162E00CA7861 /* GraphView.swift in Sources */,
+				2B2854122D57A718009E86E9 /* GlucoseMeasurement.swift in Sources */,
+				2B2854162D58AECF009E86E9 /* NightscoutDataSource.swift in Sources */,
+				2B2854182D58B64F009E86E9 /* Double.swift in Sources */,
+				2B1C9E802D5A170700CA7861 /* DataSource.swift in Sources */,
+				2B28541A2D58BA36009E86E9 /* Logger.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2B2854092D57A2D0009E86E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2B28540A2D57A2D0009E86E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2B28540C2D57A2D0009E86E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SugarScope/Preview Content\"";
+				DEVELOPMENT_TEAM = 22Z3RFG9AR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bitechular.SugarScope;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2B28540D2D57A2D0009E86E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SugarScope/Preview Content\"";
+				DEVELOPMENT_TEAM = 22Z3RFG9AR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bitechular.SugarScope;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B2853F82D57A2CE009E86E9 /* Build configuration list for PBXProject "SugarScope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B2854092D57A2D0009E86E9 /* Debug */,
+				2B28540A2D57A2D0009E86E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B28540B2D57A2D0009E86E9 /* Build configuration list for PBXNativeTarget "SugarScope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B28540C2D57A2D0009E86E9 /* Debug */,
+				2B28540D2D57A2D0009E86E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2B2853F52D57A2CE009E86E9 /* Project object */;
+}
