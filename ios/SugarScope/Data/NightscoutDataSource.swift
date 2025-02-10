@@ -1,17 +1,31 @@
 import Foundation
 import os
 
-class NightscoutDataSource : DataSource{
+struct NightscoutDataSourceConfiguration: DataSourceConfiguration {
+    static let typeIdentifier = DataSourceType.nightscout.rawValue
+
+    let url: String
+    let apiToken: String?
+}
+
+class NightscoutDataSource: DataSource {
     private let logger = Logger.new("datasource.nightscout")
-    
-    private let base_url = "https://night.wdudokvanheel.nl"
-    private let apiToken = "wesley-00f19b06388cfaa3"
+    private let configuration: NightscoutDataSourceConfiguration
 
-    func getLast12h() async throws -> [GlucoseMeasurement] {
-        let twelveHoursAgo = Date().addingTimeInterval(-12 * 60 * 60)
-        let timestamp = Int(twelveHoursAgo.timeIntervalSince1970 * 1000) // Convert to ms
+    init(_ configuration: NightscoutDataSourceConfiguration) {
+        self.configuration = configuration
+    }
 
-        let url = "\(base_url)/api/v1/entries.json?token=\(apiToken)"
+    func getLastEntries(hours: Int, window: Int) async throws -> [GlucoseMeasurement] {
+        let pastTime = Date().addingTimeInterval(-TimeInterval(hours * 60 * 60))
+        let timestamp = Int(pastTime.timeIntervalSince1970 * 1000)
+        let requestedCount = hours * 60
+
+        var url = "\(configuration.url)/api/v1/entries.json"
+        
+        if let token = configuration.apiToken {
+            url = url + "?token=\(token)"
+        }
 
         guard var urlComponents = URLComponents(string: url) else {
             logger.error("Invalid URL")
@@ -20,8 +34,7 @@ class NightscoutDataSource : DataSource{
 
         urlComponents.queryItems = [
             URLQueryItem(name: "find[date][$gte]", value: "\(timestamp)"),
-            URLQueryItem(name: "count", value: "1000"), // Fetch more data
-            URLQueryItem(name: "interval", value: "5") // Group into 5-minute averages
+            URLQueryItem(name: "count", value: "\(requestedCount)"),
         ]
 
         guard let url = urlComponents.url else {
@@ -29,10 +42,7 @@ class NightscoutDataSource : DataSource{
             throw NetworkError.invalidURL
         }
 
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await URLSession.shared.data(from: url)
 
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             logger.error("Invalid response from Nightscout server")
@@ -44,18 +54,23 @@ class NightscoutDataSource : DataSource{
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             let nightscoutEntries = try decoder.decode([NightscoutEntryDTO].self, from: data)
 
-            return groupEntriesIntoIntervals(entries: nightscoutEntries)
+            // Nightscout will always return entries with a 1m interval, group them manually here
+            if window > 1 {
+                return groupEntriesIntoIntervals(entries: nightscoutEntries, window: window)
+            }
+            return nightscoutEntries.map { $0.toGlucoseMeasurement() }.reversed()
+
         } catch {
             logger.error("Decoding error: \(error.localizedDescription)")
             throw error
         }
     }
 
-    private func groupEntriesIntoIntervals(entries: [NightscoutEntryDTO]) -> [GlucoseMeasurement] {
-        let fiveMinuteInterval: TimeInterval = 5 * 60 * 1000
+    private func groupEntriesIntoIntervals(entries: [NightscoutEntryDTO], window: Int) -> [GlucoseMeasurement] {
+        let interval = TimeInterval(window * 60 * 1000)
 
         let groupedEntries = Dictionary(grouping: entries) { (entry: NightscoutEntryDTO) -> Int in
-            Int(entry.date / fiveMinuteInterval)
+            Int(entry.date / interval)
         }
 
         let aggregatedMeasurements: [GlucoseMeasurement] = groupedEntries.values.map { group in

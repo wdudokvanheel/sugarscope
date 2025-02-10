@@ -10,6 +10,12 @@
 		2B1C9E7A2D5A15CA00CA7861 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E792D5A15CA00CA7861 /* MainView.swift */; };
 		2B1C9E7C2D5A162E00CA7861 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E7B2D5A162E00CA7861 /* GraphView.swift */; };
 		2B1C9E802D5A170700CA7861 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E7F2D5A170700CA7861 /* DataSource.swift */; };
+		2B1C9E822D5A287100CA7861 /* DataSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E812D5A287100CA7861 /* DataSourceService.swift */; };
+		2B1C9E842D5A295000CA7861 /* PreferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E832D5A295000CA7861 /* PreferenceService.swift */; };
+		2B1C9E862D5A4E6F00CA7861 /* ConfigurationWizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E852D5A4E6F00CA7861 /* ConfigurationWizard.swift */; };
+		2B1C9E892D5A4F4D00CA7861 /* NightscoutConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E882D5A4F4D00CA7861 /* NightscoutConfigurationView.swift */; };
+		2B1C9E8B2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E8A2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift */; };
+		2B1C9E8D2D5A518C00CA7861 /* DataSourceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E8C2D5A518C00CA7861 /* DataSourceConfiguration.swift */; };
 		2B2854012D57A2CE009E86E9 /* SugarScopeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854002D57A2CE009E86E9 /* SugarScopeApp.swift */; };
 		2B2854032D57A2CE009E86E9 /* ColoredLineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854022D57A2CE009E86E9 /* ColoredLineGraph.swift */; };
 		2B2854052D57A2D0009E86E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B2854042D57A2D0009E86E9 /* Assets.xcassets */; };
@@ -25,6 +31,12 @@
 		2B1C9E792D5A15CA00CA7861 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		2B1C9E7B2D5A162E00CA7861 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		2B1C9E7F2D5A170700CA7861 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		2B1C9E812D5A287100CA7861 /* DataSourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceService.swift; sourceTree = "<group>"; };
+		2B1C9E832D5A295000CA7861 /* PreferenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceService.swift; sourceTree = "<group>"; };
+		2B1C9E852D5A4E6F00CA7861 /* ConfigurationWizard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationWizard.swift; sourceTree = "<group>"; };
+		2B1C9E882D5A4F4D00CA7861 /* NightscoutConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutConfigurationView.swift; sourceTree = "<group>"; };
+		2B1C9E8A2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarScopeConfigurationView.swift; sourceTree = "<group>"; };
+		2B1C9E8C2D5A518C00CA7861 /* DataSourceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceConfiguration.swift; sourceTree = "<group>"; };
 		2B2853FD2D57A2CE009E86E9 /* SugarScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SugarScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2854002D57A2CE009E86E9 /* SugarScopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarScopeApp.swift; sourceTree = "<group>"; };
 		2B2854022D57A2CE009E86E9 /* ColoredLineGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredLineGraph.swift; sourceTree = "<group>"; };
@@ -48,14 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B1C9E782D5A15B000CA7861 /* Views */ = {
+		2B1C9E782D5A15B000CA7861 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2B1C9E872D5A4F2D00CA7861 /* Configuration */,
 				2B2854022D57A2CE009E86E9 /* ColoredLineGraph.swift */,
-				2B1C9E792D5A15CA00CA7861 /* MainView.swift */,
 				2B1C9E7B2D5A162E00CA7861 /* GraphView.swift */,
+				2B1C9E792D5A15CA00CA7861 /* MainView.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		2B1C9E7D2D5A16E800CA7861 /* Model */ = {
@@ -69,18 +82,38 @@
 		2B1C9E7E2D5A16EE00CA7861 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				2B1C9E7F2D5A170700CA7861 /* DataSource.swift */,
+				2B1C9E8C2D5A518C00CA7861 /* DataSourceConfiguration.swift */,
 				2B2854152D58AECF009E86E9 /* NightscoutDataSource.swift */,
 				2B2854132D57B4BC009E86E9 /* SugarScopeDataSource.swift */,
-				2B1C9E7F2D5A170700CA7861 /* DataSource.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		2B1C9E872D5A4F2D00CA7861 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				2B1C9E852D5A4E6F00CA7861 /* ConfigurationWizard.swift */,
+				2B1C9E882D5A4F4D00CA7861 /* NightscoutConfigurationView.swift */,
+				2B1C9E8A2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		2B1C9E8E2D5A522C00CA7861 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2B1C9E812D5A287100CA7861 /* DataSourceService.swift */,
+				2B1C9E832D5A295000CA7861 /* PreferenceService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		2B2853F42D57A2CE009E86E9 = {
 			isa = PBXGroup;
 			children = (
-				2B2853FF2D57A2CE009E86E9 /* SugarScope */,
 				2B2853FE2D57A2CE009E86E9 /* Products */,
+				2B2853FF2D57A2CE009E86E9 /* SugarScope */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,24 +128,25 @@
 		2B2853FF2D57A2CE009E86E9 /* SugarScope */ = {
 			isa = PBXGroup;
 			children = (
-				2B1C9E7E2D5A16EE00CA7861 /* Data */,
-				2B1C9E7D2D5A16E800CA7861 /* Model */,
-				2B1C9E782D5A15B000CA7861 /* Views */,
 				2B2854002D57A2CE009E86E9 /* SugarScopeApp.swift */,
+				2B1C9E7E2D5A16EE00CA7861 /* Data */,
+				2B28540E2D57A3FF009E86E9 /* Extension */,
+				2B1C9E7D2D5A16E800CA7861 /* Model */,
+				2B1C9E8E2D5A522C00CA7861 /* Service */,
+				2B1C9E782D5A15B000CA7861 /* View */,
 				2B2854042D57A2D0009E86E9 /* Assets.xcassets */,
-				2B28540E2D57A3FF009E86E9 /* Extensions */,
 			);
 			path = SugarScope;
 			sourceTree = "<group>";
 		};
-		2B28540E2D57A3FF009E86E9 /* Extensions */ = {
+		2B28540E2D57A3FF009E86E9 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				2B28540F2D57A40E009E86E9 /* Calendar.swift */,
 				2B2854172D58B64F009E86E9 /* Double.swift */,
 				2B2854192D58BA36009E86E9 /* Logger.swift */,
 			);
-			path = Extensions;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,15 +219,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B2854032D57A2CE009E86E9 /* ColoredLineGraph.swift in Sources */,
+				2B1C9E8B2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift in Sources */,
 				2B1C9E7A2D5A15CA00CA7861 /* MainView.swift in Sources */,
 				2B2854102D57A40E009E86E9 /* Calendar.swift in Sources */,
+				2B1C9E842D5A295000CA7861 /* PreferenceService.swift in Sources */,
 				2B2854142D57B4BC009E86E9 /* SugarScopeDataSource.swift in Sources */,
 				2B2854012D57A2CE009E86E9 /* SugarScopeApp.swift in Sources */,
 				2B1C9E7C2D5A162E00CA7861 /* GraphView.swift in Sources */,
 				2B2854122D57A718009E86E9 /* GlucoseMeasurement.swift in Sources */,
+				2B1C9E8D2D5A518C00CA7861 /* DataSourceConfiguration.swift in Sources */,
+				2B1C9E892D5A4F4D00CA7861 /* NightscoutConfigurationView.swift in Sources */,
 				2B2854162D58AECF009E86E9 /* NightscoutDataSource.swift in Sources */,
 				2B2854182D58B64F009E86E9 /* Double.swift in Sources */,
 				2B1C9E802D5A170700CA7861 /* DataSource.swift in Sources */,
+				2B1C9E862D5A4E6F00CA7861 /* ConfigurationWizard.swift in Sources */,
+				2B1C9E822D5A287100CA7861 /* DataSourceService.swift in Sources */,
 				2B28541A2D58BA36009E86E9 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

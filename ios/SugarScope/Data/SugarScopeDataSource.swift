@@ -1,14 +1,32 @@
 import Foundation
 import os
-import SwiftUI
+
+struct SugarScopeDataSourceConfiguration: DataSourceConfiguration {
+    static let typeIdentifier = DataSourceType.sugarscope.rawValue
+
+    let url: String
+}
 
 class SugarScopeDataSource: DataSource {
     private let logger = Logger.new("datasource.sugarscope")
-
-    private let base_url = "http://10.0.0.21:9090"
+    private let configuration: SugarScopeDataSourceConfiguration
     
-    func getLast12h() async throws -> [GlucoseMeasurement] {
-        guard let url = URL(string: "\(base_url)/graph") else {
+    var baseUrl: String {
+        return "\(configuration.url)/api/s1"
+    }
+    
+    init(_ configuration: SugarScopeDataSourceConfiguration) {
+        self.configuration = configuration
+    }
+    
+    func getLastEntries(hours: Int, window: Int) async throws -> [GlucoseMeasurement] {
+        var urlComponents = URLComponents(string: "\(baseUrl)/entries/last")
+        urlComponents?.queryItems = [
+            URLQueryItem(name: "hours", value: "\(hours)"),
+            URLQueryItem(name: "window", value: "\(window)")
+        ]
+        
+        guard let url = urlComponents?.url else {
             logger.error("Invalid URL")
             throw NetworkError.invalidURL
         }
@@ -16,7 +34,7 @@ class SugarScopeDataSource: DataSource {
         let (data, response) = try await URLSession.shared.data(from: url)
         
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            logger.error("Invalid response from server")
+            logger.error("Invalid response from SugarScope server")
             throw NetworkError.invalidResponse
         }
         
@@ -36,10 +54,4 @@ class SugarScopeDataSource: DataSource {
             throw error
         }
     }
-}
-
-enum NetworkError: Error {
-    case invalidURL
-    case invalidResponse
-    case noData
 }

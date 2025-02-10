@@ -41,17 +41,17 @@ struct GraphView: View {
         .padding(0)
         .onReceive(timer) { _ in
             Task {
-                await loadData()
+                await fetchData()
             }
         }
         .task {
-            await loadData()
+            await fetchData()
         }
     }
 
-    private func loadData() async {
+    private func fetchData() async {
         do {
-            glucoseData = try await datasource.getLast12h()
+            glucoseData = try await datasource.getLastEntries(hours: 12, window: 5)
         } catch {
             print("Error fetching data: \(error)")
         }
