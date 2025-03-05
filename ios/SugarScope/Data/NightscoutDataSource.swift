@@ -16,7 +16,7 @@ class NightscoutDataSource: DataSource {
         self.configuration = configuration
     }
 
-    func getLastEntries(hours: Int, window: Int) async throws -> [GlucoseMeasurement] {
+    func getLatestEntries(hours: Int, window: Int) async throws -> [GlucoseMeasurement] {
         let pastTime = Date().addingTimeInterval(-TimeInterval(hours * 60 * 60))
         let timestamp = Int(pastTime.timeIntervalSince1970 * 1000)
         let requestedCount = hours * 60

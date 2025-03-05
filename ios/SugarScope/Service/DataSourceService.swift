@@ -15,7 +15,7 @@ class DataSourceService: ObservableObject {
         initDataSource()
     }
 
-    func initDataSource() {
+    private func initDataSource() {
         if let config = configuration {
             datasource = createDataSource(from: config)
         }

@@ -19,7 +19,7 @@ class SugarScopeDataSource: DataSource {
         self.configuration = configuration
     }
     
-    func getLastEntries(hours: Int, window: Int) async throws -> [GlucoseMeasurement] {
+    func getLatestEntries(hours: Int, window: Int) async throws -> [GlucoseMeasurement] {
         var urlComponents = URLComponents(string: "\(baseUrl)/entries/last")
         urlComponents?.queryItems = [
             URLQueryItem(name: "hours", value: "\(hours)"),
@@ -27,7 +27,7 @@ class SugarScopeDataSource: DataSource {
         ]
         
         guard let url = urlComponents?.url else {
-            logger.error("Invalid URL")
+            logger.error("Invalid URL!")
             throw NetworkError.invalidURL
         }
         

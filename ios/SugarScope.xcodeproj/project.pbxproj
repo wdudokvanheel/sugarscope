@@ -25,6 +25,9 @@
 		2B2854162D58AECF009E86E9 /* NightscoutDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854152D58AECF009E86E9 /* NightscoutDataSource.swift */; };
 		2B2854182D58B64F009E86E9 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854172D58B64F009E86E9 /* Double.swift */; };
 		2B28541A2D58BA36009E86E9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854192D58BA36009E86E9 /* Logger.swift */; };
+		2B64B97A2D787BFE00F0BC14 /* CurrentValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64B9792D787BFE00F0BC14 /* CurrentValueView.swift */; };
+		2B64B97C2D787F0300F0BC14 /* OrientationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64B97B2D787F0300F0BC14 /* OrientationInfo.swift */; };
+		2B64B97E2D7880FF00F0BC14 /* RealtimeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64B97D2D7880FF00F0BC14 /* RealtimeDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,10 @@
 		2B2854152D58AECF009E86E9 /* NightscoutDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutDataSource.swift; sourceTree = "<group>"; };
 		2B2854172D58B64F009E86E9 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		2B2854192D58BA36009E86E9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		2B64B9782D75EF0400F0BC14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2B64B9792D787BFE00F0BC14 /* CurrentValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentValueView.swift; sourceTree = "<group>"; };
+		2B64B97B2D787F0300F0BC14 /* OrientationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationInfo.swift; sourceTree = "<group>"; };
+		2B64B97D2D7880FF00F0BC14 /* RealtimeDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +74,7 @@
 				2B2854022D57A2CE009E86E9 /* ColoredLineGraph.swift */,
 				2B1C9E7B2D5A162E00CA7861 /* GraphView.swift */,
 				2B1C9E792D5A15CA00CA7861 /* MainView.swift */,
+				2B64B9792D787BFE00F0BC14 /* CurrentValueView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -105,6 +113,8 @@
 			children = (
 				2B1C9E812D5A287100CA7861 /* DataSourceService.swift */,
 				2B1C9E832D5A295000CA7861 /* PreferenceService.swift */,
+				2B64B97B2D787F0300F0BC14 /* OrientationInfo.swift */,
+				2B64B97D2D7880FF00F0BC14 /* RealtimeDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -128,6 +138,7 @@
 		2B2853FF2D57A2CE009E86E9 /* SugarScope */ = {
 			isa = PBXGroup;
 			children = (
+				2B64B9782D75EF0400F0BC14 /* Info.plist */,
 				2B2854002D57A2CE009E86E9 /* SugarScopeApp.swift */,
 				2B1C9E7E2D5A16EE00CA7861 /* Data */,
 				2B28540E2D57A3FF009E86E9 /* Extension */,
@@ -220,10 +231,13 @@
 			files = (
 				2B2854032D57A2CE009E86E9 /* ColoredLineGraph.swift in Sources */,
 				2B1C9E8B2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift in Sources */,
+				2B64B97E2D7880FF00F0BC14 /* RealtimeDataService.swift in Sources */,
 				2B1C9E7A2D5A15CA00CA7861 /* MainView.swift in Sources */,
+				2B64B97C2D787F0300F0BC14 /* OrientationInfo.swift in Sources */,
 				2B2854102D57A40E009E86E9 /* Calendar.swift in Sources */,
 				2B1C9E842D5A295000CA7861 /* PreferenceService.swift in Sources */,
 				2B2854142D57B4BC009E86E9 /* SugarScopeDataSource.swift in Sources */,
+				2B64B97A2D787BFE00F0BC14 /* CurrentValueView.swift in Sources */,
 				2B2854012D57A2CE009E86E9 /* SugarScopeApp.swift in Sources */,
 				2B1C9E7C2D5A162E00CA7861 /* GraphView.swift in Sources */,
 				2B2854122D57A718009E86E9 /* GlucoseMeasurement.swift in Sources */,
@@ -293,7 +307,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -350,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -365,24 +379,27 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SugarScope/Preview Content\"";
-				DEVELOPMENT_TEAM = 22Z3RFG9AR;
+				DEVELOPMENT_TEAM = L23NTUN6KV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SugarScope/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SugarScope;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bitechular.SugarScope;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bitechular.prod.SugarScope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -395,24 +412,27 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SugarScope/Preview Content\"";
-				DEVELOPMENT_TEAM = 22Z3RFG9AR;
+				DEVELOPMENT_TEAM = L23NTUN6KV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SugarScope/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SugarScope;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bitechular.SugarScope;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bitechular.prod.SugarScope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

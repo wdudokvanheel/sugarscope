@@ -76,7 +76,7 @@ struct ColoredLineGraph: View {
                     yStart: .value("Value", bounds_low),
                     yEnd: .value("Value", point.value)
                 )
-                .foregroundStyle(.gray.opacity(0.1))
+                .foregroundStyle(Color("GraphFill").opacity(0.1))
 
                 LineMark(
                     x: .value("Time", point.date),

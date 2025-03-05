@@ -3,7 +3,7 @@ import os
 import SwiftUI
 
 protocol DataSource {
-    func getLastEntries(hours: Int, window: Int) async throws -> [GlucoseMeasurement]
+    func getLatestEntries(hours: Int, window: Int) async throws -> [GlucoseMeasurement]
 }
 
 enum DataSourceType: String, Codable {
