@@ -27,7 +27,7 @@ class RealtimeDataService: ObservableObject {
     
     private func startBackgroundFetch(_ datasource: DataSource) {
         timer?.cancel()
-        timer = Timer.publish(every: 30, on: .main, in: .common)
+        timer = Timer.publish(every: 5, on: .main, in: .common)
             .autoconnect()
             .sink { [weak self] _ in
                 self?.fetchLatestEntries(datasource)
@@ -57,6 +57,7 @@ class RealtimeDataService: ObservableObject {
     private func observeAppLifecycle() {
         NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)
             .sink { [weak self] _ in
+                print("GOING BACK FOR MORE XX")
                 guard let self = self, let datasource = self.dataSourceService.datasource else { return }
                 self.startBackgroundFetch(datasource)
             }

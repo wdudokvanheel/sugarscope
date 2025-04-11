@@ -12,10 +12,7 @@ struct CurrentValueView: View {
 
     var backgroundColor: Color {
         if let value = realTimeDataService.currentValue {
-            if value < 4 || value > 7 {
-                return Color.red
-            }
-            return Color.green
+            return value < 4 || value > 7 ? Color.red : Color.green
         }
         return Color.gray
     }
@@ -52,7 +49,7 @@ struct CurrentValueView: View {
                         HStack {
                             Spacer()
 
-                            Text("Last updated \(lastUpdate.formatted(date: .omitted, time: .shortened))")
+                            Text("Last updated \(lastUpdate.formatted(date: .omitted, time: .complete))")
                                 .font(.caption)
                                 .foregroundStyle(Color.black.opacity(0.6))
                                 .padding(.vertical, 6)
@@ -63,9 +60,9 @@ struct CurrentValueView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .onChange(of: backgroundColor) { newColor in
+        .onChange(of: realTimeDataService.currentValue) { _ in
             withAnimation {
-                animatedBackgroundColor = newColor
+                animatedBackgroundColor = self.backgroundColor
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
