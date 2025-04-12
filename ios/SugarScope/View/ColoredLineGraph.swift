@@ -4,8 +4,9 @@ import SwiftUI
 struct ColoredLineGraph: View {
     @Environment(\.verticalSizeClass) private var verticalSizeClass
 
-    let bounds_low: Double
-    let bounds_high: Double
+    let graph_bounds_low: Double
+    let graph_bounds_high: Double
+    
     let color_range_low: Double
     let color_range_high: Double
     let color_range_upper_high: Double
@@ -14,8 +15,8 @@ struct ColoredLineGraph: View {
 
     init(data: [GlucoseMeasurement]) {
         self.data = data
-        self.bounds_low = 2.5
-        self.bounds_high = 20
+        self.graph_bounds_low = 2.5
+        self.graph_bounds_high = 20
         self.color_range_low = 4
         self.color_range_high = 7
         self.color_range_upper_high = 10
@@ -23,8 +24,8 @@ struct ColoredLineGraph: View {
 
     init(data: [GlucoseMeasurement], bounds_low: Double, bounds_high: Double, color_range_low: Double, color_range_high: Double, color_range_upper_high: Double) {
         self.data = data
-        self.bounds_low = bounds_low
-        self.bounds_high = bounds_high
+        self.graph_bounds_low = bounds_low
+        self.graph_bounds_high = bounds_high
         self.color_range_low = color_range_low
         self.color_range_high = color_range_high
         self.color_range_upper_high = color_range_upper_high
@@ -32,11 +33,11 @@ struct ColoredLineGraph: View {
     }
 
     var minValue: Double {
-        max(bounds_low, data.map { $0.value }.min() ?? bounds_low)
+        max(graph_bounds_low, data.map { $0.value }.min() ?? graph_bounds_low)
     }
 
     var maxValue: Double {
-        min(bounds_high, data.map { $0.value }.max() ?? bounds_high)
+        min(graph_bounds_high, data.map { $0.value }.max() ?? graph_bounds_high)
     }
 
     // Using a logarithmic scale for normalization to calculate the stops for the line gradient.
@@ -73,7 +74,7 @@ struct ColoredLineGraph: View {
             Chart(data) { point in
                 AreaMark(
                     x: .value("Time", point.date),
-                    yStart: .value("Value", bounds_low),
+                    yStart: .value("Value", graph_bounds_low),
                     yEnd: .value("Value", point.value)
                 )
                 .foregroundStyle(Color("GraphFill").opacity(0.1))
@@ -124,7 +125,7 @@ struct ColoredLineGraph: View {
                     AxisValueLabel()
                 }
             }
-            .chartYScale(domain: bounds_low ... bounds_high, type: .log)
+            .chartYScale(domain: graph_bounds_low ... graph_bounds_high, type: .log)
             .padding(.top, 8)
             .frame(height: verticalSizeClass == .compact ? geometry.size.height : geometry.size.height )
             .frame(maxWidth: .infinity)

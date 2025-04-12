@@ -5,14 +5,22 @@ import SwiftUI
 struct CurrentValueView: View {
     @ObservedObject private var realTimeDataService: RealtimeDataService
     @State private var animatedBackgroundColor: Color = .gray
+    
+    let color_range_low: Double
+    let color_range_high: Double
+    let color_range_upper_high: Double
 
     init(_ realTimeDataService: RealtimeDataService) {
+        self.color_range_low = 4
+        self.color_range_high = 7
+        self.color_range_upper_high = 10
+        
         self.realTimeDataService = realTimeDataService
         
         // Make sure your animated background starts off in sync:
         _animatedBackgroundColor = State(initialValue: {
             if let value = realTimeDataService.currentValue {
-                return (value < 4 || value > 7) ? .red : .green
+                return color_based_on_value(value)
             } else {
                 return .gray
             }
@@ -21,11 +29,11 @@ struct CurrentValueView: View {
 
     var backgroundColor: Color {
         if let value = realTimeDataService.currentValue {
-            return value < 4 || value > 7 ? Color.red : Color.green
+            return color_based_on_value(value)
         }
         return Color.gray
     }
-
+    
     var body: some View {
         VStack {
             VStack {}
@@ -38,8 +46,7 @@ struct CurrentValueView: View {
                             .font(.system(size: 72))
                             .fontWeight(.semibold)
                             .foregroundStyle(Color.black)
-                    }
-                    else {
+                    } else {
                         Text("???")
                             .font(.system(size: 48))
                             .fontWeight(.semibold)
@@ -75,5 +82,23 @@ struct CurrentValueView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+    
+    private func color_based_on_value(_ value: Double) -> Color {
+        let startColor = Color.yellow
+        let endColor = Color.red
+        
+        if value < color_range_low {
+            return .red
+        }
+        if value < color_range_high {
+            return .green
+        }
+        if value >= color_range_upper_high {
+            return endColor
+        }
+        
+        let fraction = CGFloat((value - color_range_high) / (color_range_upper_high - color_range_high))
+        return Color.interpolate(from: startColor, to: endColor, fraction: fraction)
     }
 }
