@@ -8,6 +8,15 @@ struct CurrentValueView: View {
 
     init(_ realTimeDataService: RealtimeDataService) {
         self.realTimeDataService = realTimeDataService
+        
+        // Make sure your animated background starts off in sync:
+        _animatedBackgroundColor = State(initialValue: {
+            if let value = realTimeDataService.currentValue {
+                return (value < 4 || value > 7) ? .red : .green
+            } else {
+                return .gray
+            }
+        }())
     }
 
     var backgroundColor: Color {
