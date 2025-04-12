@@ -1,15 +1,23 @@
 import SwiftUI
 
 struct ConfigurationWizard: View {
-    @State private var selectedType: DataSourceType = .sugarscope
+    @State private var selectedType: DataSourceType
     @State private var configuration: DataSourceConfiguration?
 
     var onSave: (DataSourceConfiguration) -> Void
     
-    init(configuration: DataSourceConfiguration?, _ onSave: @escaping (DataSourceConfiguration) -> Void){
-        self._selectedType = State(initialValue: .sugarscope)
+    init(
+        configuration: DataSourceConfiguration?,
+        _ onSave: @escaping (DataSourceConfiguration) -> Void
+    ) {
+        // Determine initial selectedType from configuration
+        if let _ = configuration as? NightscoutDataSourceConfiguration {
+            _selectedType = State(initialValue: .nightscout)
+        } else {
+            _selectedType = State(initialValue: .sugarscope)
+        }
+        
         self._configuration = State(initialValue: configuration)
-        print("Starting with configuration: \(configuration)")
         self.onSave = onSave
     }
 
@@ -22,8 +30,22 @@ struct ConfigurationWizard: View {
                 Text("SugarScope").tag(DataSourceType.sugarscope)
                 Text("Nightscout").tag(DataSourceType.nightscout)
             }
-            .pickerStyle(SegmentedPickerStyle())
+            .pickerStyle(.segmented)
             .padding()
+            .onChange(of: selectedType) { newType in
+                // If user changes type, reset to an empty config of that type if you want
+                // or just nil out to start fresh:
+                switch newType {
+                case .sugarscope:
+                    if !(configuration is SugarScopeDataSourceConfiguration) {
+                        configuration = SugarScopeDataSourceConfiguration(url: "")
+                    }
+                case .nightscout:
+                    if !(configuration is NightscoutDataSourceConfiguration) {
+                        configuration = NightscoutDataSourceConfiguration(url: "", apiToken: nil)
+                    }
+                }
+            }
 
             // Dynamically switch between configuration views
             switch selectedType {
@@ -33,7 +55,6 @@ struct ConfigurationWizard: View {
                 NightscoutConfigurationView(configuration: $configuration)
             }
 
-            // Save button (only enabled when valid configuration exists)
             Button("Save Configuration") {
                 if let config = configuration {
                     onSave(config)
