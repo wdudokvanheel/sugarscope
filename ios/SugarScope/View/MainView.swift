@@ -21,8 +21,16 @@ struct MainView: View {
                 if orientation.orientation == .portrait {
                     GeometryReader { geom in
                         VStack(spacing: 24) {
-                            CurrentValueView(realTimeDataSource)
-                                .frame(maxWidth: .infinity, maxHeight: geom.size.height * 0.3 - 12)
+                            ZStack(alignment: .topTrailing) {
+                                CurrentValueView(realTimeDataSource)
+                                    .frame(maxWidth: .infinity, maxHeight: geom.size.height * 0.3 - 12)
+                                NavigationLink(destination: SettingsView(dataService: dataService)) {
+                                    Image(systemName: "gear")
+                                        .foregroundStyle(.black)
+                                        .padding(.top, 12+8)
+                                        .padding(.trailing, 8)
+                                }
+                            }
                             GraphView(realTimeDataSource)
                                 .frame(maxWidth: .infinity, maxHeight: geom.size.height * 0.7 - 12)
                         }
@@ -34,7 +42,7 @@ struct MainView: View {
                         GraphView(realTimeDataSource)
                         if let value = realTimeDataSource.currentValue {
                             VStack {
-                                HStack{
+                                HStack {
                                     Text(String(format: "%.1f", value))
                                         .font(.title2)
                                         .padding(8)
@@ -45,7 +53,7 @@ struct MainView: View {
                                         )
                                     Spacer()
                                 }
-                                Spacer() 
+                                Spacer()
                             }
                             .padding()
                         }
@@ -53,7 +61,7 @@ struct MainView: View {
                 }
             }
             else {
-                ConfigurationWizard { conf in
+                ConfigurationWizard(configuration: nil) { conf in
                     self.dataService.saveConfiguration(conf)
                 }
             }

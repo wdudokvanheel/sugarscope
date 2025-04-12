@@ -25,6 +25,7 @@
 		2B2854162D58AECF009E86E9 /* NightscoutDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854152D58AECF009E86E9 /* NightscoutDataSource.swift */; };
 		2B2854182D58B64F009E86E9 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854172D58B64F009E86E9 /* Double.swift */; };
 		2B28541A2D58BA36009E86E9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854192D58BA36009E86E9 /* Logger.swift */; };
+		2B4ED5BC2DA9507C00ADE664 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4ED5BB2DA9507B00ADE664 /* Settings.swift */; };
 		2B64B97A2D787BFE00F0BC14 /* CurrentValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64B9792D787BFE00F0BC14 /* CurrentValueView.swift */; };
 		2B64B97C2D787F0300F0BC14 /* OrientationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64B97B2D787F0300F0BC14 /* OrientationInfo.swift */; };
 		2B64B97E2D7880FF00F0BC14 /* RealtimeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64B97D2D7880FF00F0BC14 /* RealtimeDataService.swift */; };
@@ -50,6 +51,7 @@
 		2B2854152D58AECF009E86E9 /* NightscoutDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutDataSource.swift; sourceTree = "<group>"; };
 		2B2854172D58B64F009E86E9 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		2B2854192D58BA36009E86E9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		2B4ED5BB2DA9507B00ADE664 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2B64B9782D75EF0400F0BC14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2B64B9792D787BFE00F0BC14 /* CurrentValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentValueView.swift; sourceTree = "<group>"; };
 		2B64B97B2D787F0300F0BC14 /* OrientationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationInfo.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		2B1C9E872D5A4F2D00CA7861 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				2B4ED5BB2DA9507B00ADE664 /* Settings.swift */,
 				2B1C9E852D5A4E6F00CA7861 /* ConfigurationWizard.swift */,
 				2B1C9E882D5A4F4D00CA7861 /* NightscoutConfigurationView.swift */,
 				2B1C9E8A2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift */,
@@ -247,6 +250,7 @@
 				2B2854182D58B64F009E86E9 /* Double.swift in Sources */,
 				2B1C9E802D5A170700CA7861 /* DataSource.swift in Sources */,
 				2B1C9E862D5A4E6F00CA7861 /* ConfigurationWizard.swift in Sources */,
+				2B4ED5BC2DA9507C00ADE664 /* Settings.swift in Sources */,
 				2B1C9E822D5A287100CA7861 /* DataSourceService.swift in Sources */,
 				2B28541A2D58BA36009E86E9 /* Logger.swift in Sources */,
 			);
@@ -381,7 +385,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SugarScope/Preview Content\"";
 				DEVELOPMENT_TEAM = L23NTUN6KV;
 				ENABLE_PREVIEWS = YES;
@@ -398,7 +402,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitechular.prod.SugarScope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -414,7 +418,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SugarScope/Preview Content\"";
 				DEVELOPMENT_TEAM = L23NTUN6KV;
 				ENABLE_PREVIEWS = YES;
@@ -431,7 +435,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitechular.prod.SugarScope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

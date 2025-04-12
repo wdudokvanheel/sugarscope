@@ -5,6 +5,13 @@ struct ConfigurationWizard: View {
     @State private var configuration: DataSourceConfiguration?
 
     var onSave: (DataSourceConfiguration) -> Void
+    
+    init(configuration: DataSourceConfiguration?, _ onSave: @escaping (DataSourceConfiguration) -> Void){
+        self._selectedType = State(initialValue: .sugarscope)
+        self._configuration = State(initialValue: configuration)
+        print("Starting with configuration: \(configuration)")
+        self.onSave = onSave
+    }
 
     var body: some View {
         VStack {
@@ -33,7 +40,7 @@ struct ConfigurationWizard: View {
                 }
             }
             .buttonStyle(.borderedProminent)
-            .disabled(configuration == nil) // Disable when no valid configuration
+            .disabled(configuration == nil)
             .padding()
         }
     }

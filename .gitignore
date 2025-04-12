@@ -3,3 +3,5 @@
 /bin
 .idea
 backend/target
+assets/test.toml
+

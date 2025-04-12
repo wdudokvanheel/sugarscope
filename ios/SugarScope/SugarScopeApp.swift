@@ -4,8 +4,11 @@ import SwiftUI
 struct SugarScopeApp: App {
     var body: some Scene {
         WindowGroup {
-           MainView()
-                .environmentObject(OrientationInfo())
+            NavigationView{
+                MainView()
+                    .environmentObject(OrientationInfo())
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }
