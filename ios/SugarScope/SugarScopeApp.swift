@@ -6,7 +6,6 @@ struct SugarScopeApp: App {
         WindowGroup {
             NavigationView{
                 MainView()
-                    .environmentObject(OrientationInfo())
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }
