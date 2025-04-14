@@ -57,7 +57,6 @@ class RealtimeDataService: ObservableObject {
     private func observeAppLifecycle() {
         NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)
             .sink { [weak self] _ in
-                print("GOING BACK FOR MORE XX")
                 guard let self = self, let datasource = self.dataSourceService.datasource else { return }
                 self.startBackgroundFetch(datasource)
             }

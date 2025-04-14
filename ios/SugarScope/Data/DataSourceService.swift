@@ -5,12 +5,15 @@ import SwiftUI
 class DataSourceService: ObservableObject {
     private let logger = Logger.new("datasource.service")
 
+    private let prefences: PreferenceService
+
     @Published
     public var configuration: DataSourceConfiguration?
     @Published
     public var datasource: DataSource?
 
-    init() {
+    init(prefences: PreferenceService) {
+        self.prefences = prefences
         self.configuration = loadConfiguration()
         initDataSource()
     }
@@ -22,13 +25,14 @@ class DataSourceService: ObservableObject {
     }
 
     private func loadConfiguration() -> DataSourceConfiguration? {
-        guard let jsonString: String = PreferencesService.get(forKey: .connection),
+        // TODO: Convert to new preference system
+        guard let jsonString: String = prefences.connection,
               let jsonData = jsonString.data(using: .utf8)
         else {
             logger.debug("No configuration found")
             return nil
         }
-        
+
         logger.trace("Configuration data: \(jsonString)")
 
         do {
@@ -47,8 +51,8 @@ class DataSourceService: ObservableObject {
             let jsonString = String(data: jsonData, encoding: .utf8)
 
             logger.trace("Saving configuration: \(jsonString!)")
-            
-            PreferencesService.set(jsonString, forKey: .connection)
+
+            prefences.connection = jsonString
 
             configuration = config
             initDataSource()
@@ -56,12 +60,12 @@ class DataSourceService: ObservableObject {
             logger.error("Failed to save configuration: \(error.localizedDescription)")
         }
     }
-    
-    func clearConfiguration(){
+
+    func clearConfiguration() {
         logger.debug("Removing current configuration")
-        self.configuration = nil
-        self.datasource = nil
-        PreferencesService.remove(forKey: .connection)
+        configuration = nil
+        datasource = nil
+        prefences.connection = nil
     }
 
     private func createDataSource(from config: DataSourceConfiguration) -> DataSource? {

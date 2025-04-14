@@ -1,19 +1,13 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject private var dataService: DataSourceService
-    @ObservedObject private var realTimeDataSource: RealtimeDataService
-
-    init() {
-        let datasource = DataSourceService()
-        dataService = datasource
-        realTimeDataSource = .init(dataSourceService: datasource)
-        print(UIScreen.main.bounds.size)
-    }
+    @EnvironmentObject private var prefs: PreferenceService
+    @EnvironmentObject private var dataService: DataSourceService
+    @EnvironmentObject private var realTimeDataSource: RealtimeDataService
 
     var body: some View {
         ZStack(alignment: .top) {
-            Color("Background")
+            Color(hex: prefs.theme.background)
                 .ignoresSafeArea()
 
             if dataService.datasource != nil {

@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1628282DAD002700652A69 /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1628272DAD002500652A69 /* ColorHex.swift */; };
 		2B1C9E7A2D5A15CA00CA7861 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E792D5A15CA00CA7861 /* MainView.swift */; };
 		2B1C9E7C2D5A162E00CA7861 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E7B2D5A162E00CA7861 /* GraphView.swift */; };
 		2B1C9E802D5A170700CA7861 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E7F2D5A170700CA7861 /* DataSource.swift */; };
 		2B1C9E822D5A287100CA7861 /* DataSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E812D5A287100CA7861 /* DataSourceService.swift */; };
-		2B1C9E842D5A295000CA7861 /* PreferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E832D5A295000CA7861 /* PreferenceService.swift */; };
 		2B1C9E862D5A4E6F00CA7861 /* ConfigurationWizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E852D5A4E6F00CA7861 /* ConfigurationWizard.swift */; };
 		2B1C9E892D5A4F4D00CA7861 /* NightscoutConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E882D5A4F4D00CA7861 /* NightscoutConfigurationView.swift */; };
 		2B1C9E8B2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E8A2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift */; };
@@ -27,17 +27,20 @@
 		2B28541A2D58BA36009E86E9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854192D58BA36009E86E9 /* Logger.swift */; };
 		2B4BAB452DAA61B300D81158 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4BAB442DAA61B000D81158 /* Colors.swift */; };
 		2B4BAB482DAA664C00D81158 /* OrientationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4BAB472DAA664700D81158 /* OrientationView.swift */; };
+		2B4BAB4C2DAAB6C000D81158 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4BAB4B2DAAB6C000D81158 /* Preference.swift */; };
+		2B4BAB522DAAB71400D81158 /* PreferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4BAB512DAAB71400D81158 /* PreferenceService.swift */; };
+		2B4BAB542DAAB91E00D81158 /* PreferenceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4BAB532DAAB91E00D81158 /* PreferenceStorage.swift */; };
 		2B4ED5BC2DA9507C00ADE664 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4ED5BB2DA9507B00ADE664 /* Settings.swift */; };
 		2B64B97A2D787BFE00F0BC14 /* CurrentValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64B9792D787BFE00F0BC14 /* CurrentValueView.swift */; };
 		2B64B97E2D7880FF00F0BC14 /* RealtimeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64B97D2D7880FF00F0BC14 /* RealtimeDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B1628272DAD002500652A69 /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
 		2B1C9E792D5A15CA00CA7861 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		2B1C9E7B2D5A162E00CA7861 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		2B1C9E7F2D5A170700CA7861 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		2B1C9E812D5A287100CA7861 /* DataSourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceService.swift; sourceTree = "<group>"; };
-		2B1C9E832D5A295000CA7861 /* PreferenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceService.swift; sourceTree = "<group>"; };
 		2B1C9E852D5A4E6F00CA7861 /* ConfigurationWizard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationWizard.swift; sourceTree = "<group>"; };
 		2B1C9E882D5A4F4D00CA7861 /* NightscoutConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutConfigurationView.swift; sourceTree = "<group>"; };
 		2B1C9E8A2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarScopeConfigurationView.swift; sourceTree = "<group>"; };
@@ -54,6 +57,9 @@
 		2B2854192D58BA36009E86E9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		2B4BAB442DAA61B000D81158 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		2B4BAB472DAA664700D81158 /* OrientationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationView.swift; sourceTree = "<group>"; };
+		2B4BAB4B2DAAB6C000D81158 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		2B4BAB512DAAB71400D81158 /* PreferenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceService.swift; sourceTree = "<group>"; };
+		2B4BAB532DAAB91E00D81158 /* PreferenceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceStorage.swift; sourceTree = "<group>"; };
 		2B4ED5BB2DA9507B00ADE664 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2B64B9782D75EF0400F0BC14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2B64B9792D787BFE00F0BC14 /* CurrentValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentValueView.swift; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 			children = (
 				2B1C9E7F2D5A170700CA7861 /* DataSource.swift */,
 				2B1C9E8C2D5A518C00CA7861 /* DataSourceConfiguration.swift */,
+				2B1C9E812D5A287100CA7861 /* DataSourceService.swift */,
 				2B2854152D58AECF009E86E9 /* NightscoutDataSource.swift */,
 				2B2854132D57B4BC009E86E9 /* SugarScopeDataSource.swift */,
 			);
@@ -117,8 +124,6 @@
 		2B1C9E8E2D5A522C00CA7861 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				2B1C9E812D5A287100CA7861 /* DataSourceService.swift */,
-				2B1C9E832D5A295000CA7861 /* PreferenceService.swift */,
 				2B64B97D2D7880FF00F0BC14 /* RealtimeDataService.swift */,
 			);
 			path = Service;
@@ -143,6 +148,7 @@
 		2B2853FF2D57A2CE009E86E9 /* SugarScope */ = {
 			isa = PBXGroup;
 			children = (
+				2B4BAB4E2DAAB6DB00D81158 /* Preferences */,
 				2B64B9782D75EF0400F0BC14 /* Info.plist */,
 				2B2854002D57A2CE009E86E9 /* SugarScopeApp.swift */,
 				2B1C9E7E2D5A16EE00CA7861 /* Data */,
@@ -158,6 +164,7 @@
 		2B28540E2D57A3FF009E86E9 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				2B1628272DAD002500652A69 /* ColorHex.swift */,
 				2B4BAB442DAA61B000D81158 /* Colors.swift */,
 				2B28540F2D57A40E009E86E9 /* Calendar.swift */,
 				2B2854172D58B64F009E86E9 /* Double.swift */,
@@ -172,6 +179,16 @@
 				2B4BAB472DAA664700D81158 /* OrientationView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		2B4BAB4E2DAAB6DB00D81158 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				2B4BAB532DAAB91E00D81158 /* PreferenceStorage.swift */,
+				2B4BAB512DAAB71400D81158 /* PreferenceService.swift */,
+				2B4BAB4B2DAAB6C000D81158 /* Preference.swift */,
+			);
+			path = Preferences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,8 +265,10 @@
 				2B64B97E2D7880FF00F0BC14 /* RealtimeDataService.swift in Sources */,
 				2B1C9E7A2D5A15CA00CA7861 /* MainView.swift in Sources */,
 				2B2854102D57A40E009E86E9 /* Calendar.swift in Sources */,
-				2B1C9E842D5A295000CA7861 /* PreferenceService.swift in Sources */,
 				2B2854142D57B4BC009E86E9 /* SugarScopeDataSource.swift in Sources */,
+				2B4BAB522DAAB71400D81158 /* PreferenceService.swift in Sources */,
+				2B4BAB542DAAB91E00D81158 /* PreferenceStorage.swift in Sources */,
+				2B1628282DAD002700652A69 /* ColorHex.swift in Sources */,
 				2B64B97A2D787BFE00F0BC14 /* CurrentValueView.swift in Sources */,
 				2B2854012D57A2CE009E86E9 /* SugarScopeApp.swift in Sources */,
 				2B1C9E7C2D5A162E00CA7861 /* GraphView.swift in Sources */,
@@ -257,6 +276,7 @@
 				2B1C9E8D2D5A518C00CA7861 /* DataSourceConfiguration.swift in Sources */,
 				2B1C9E892D5A4F4D00CA7861 /* NightscoutConfigurationView.swift in Sources */,
 				2B2854162D58AECF009E86E9 /* NightscoutDataSource.swift in Sources */,
+				2B4BAB4C2DAAB6C000D81158 /* Preference.swift in Sources */,
 				2B2854182D58B64F009E86E9 /* Double.swift in Sources */,
 				2B4BAB482DAA664C00D81158 /* OrientationView.swift in Sources */,
 				2B1C9E802D5A170700CA7861 /* DataSource.swift in Sources */,
@@ -414,7 +434,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitechular.prod.SugarScope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -447,7 +467,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitechular.prod.SugarScope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

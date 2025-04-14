@@ -3,54 +3,33 @@ import SwiftUI
 
 struct ColoredLineGraph: View {
     @Environment(\.verticalSizeClass) private var verticalSizeClass
-
-    let graph_bounds_low: Double
-    let graph_bounds_high: Double
-    
-    let color_range_low: Double
-    let color_range_high: Double
-    let color_range_upper_high: Double
+    @EnvironmentObject private var prefs: PreferenceService
 
     var data: [GlucoseMeasurement]
 
     init(data: [GlucoseMeasurement]) {
         self.data = data
-        self.graph_bounds_low = 2.5
-        self.graph_bounds_high = 20
-        self.color_range_low = 4
-        self.color_range_high = 7
-        self.color_range_upper_high = 10
-    }
-
-    init(data: [GlucoseMeasurement], bounds_low: Double, bounds_high: Double, color_range_low: Double, color_range_high: Double, color_range_upper_high: Double) {
-        self.data = data
-        self.graph_bounds_low = bounds_low
-        self.graph_bounds_high = bounds_high
-        self.color_range_low = color_range_low
-        self.color_range_high = color_range_high
-        self.color_range_upper_high = color_range_upper_high
-
     }
 
     var minValue: Double {
-        max(graph_bounds_low, data.map { $0.value }.min() ?? graph_bounds_low)
+        max(prefs.graph.boundsLower, data.map { $0.value }.min() ?? prefs.graph.boundsLower)
     }
 
     var maxValue: Double {
-        min(graph_bounds_high, data.map { $0.value }.max() ?? graph_bounds_high)
+        min(prefs.graph.boundsHigher, data.map { $0.value }.max() ?? prefs.graph.boundsHigher)
     }
 
     // Using a logarithmic scale for normalization to calculate the stops for the line gradient.
     var gradient_range_low: Double {
-        (log(color_range_low) - log(minValue)) / (log(maxValue) - log(minValue))
+        (log(prefs.bgLow) - log(minValue)) / (log(maxValue) - log(minValue))
     }
 
     var gradient_range_high: Double {
-        (log(color_range_high) - log(minValue)) / (log(maxValue) - log(minValue))
+        (log(prefs.bgHigh) - log(minValue)) / (log(maxValue) - log(minValue))
     }
 
     var gradient_range_upper: Double {
-        (log(color_range_upper_high) - log(minValue)) / (log(maxValue) - log(minValue))
+        (log(prefs.bgUpper) - log(minValue)) / (log(maxValue) - log(minValue))
     }
 
     var timeRange: [Date] {
@@ -74,7 +53,7 @@ struct ColoredLineGraph: View {
             Chart(data) { point in
                 AreaMark(
                     x: .value("Time", point.date),
-                    yStart: .value("Value", graph_bounds_low),
+                    yStart: .value("Value", prefs.graph.boundsLower),
                     yEnd: .value("Value", point.value)
                 )
                 .foregroundStyle(Color("GraphFill").opacity(0.1))
@@ -107,7 +86,6 @@ struct ColoredLineGraph: View {
             }
             .chartXScale(domain: Date(timeIntervalSince1970: data.first?.time ?? 0) ...
                 Date(timeIntervalSince1970: data.last?.time ?? 0))
-
             .chartXAxis {
                 AxisMarks(values: timeRange) { value in
                     if value.index % 2 == 0 || verticalSizeClass == .compact {
@@ -118,16 +96,15 @@ struct ColoredLineGraph: View {
                 }
             }
             .chartYAxis {
-                AxisMarks(values: [3, color_range_low, 5, 6, color_range_high, color_range_upper_high, 15, 20]) { _ in
-                    //                    AxisGridLine(stroke: StrokeStyle(lineWidth: value.as(Double.self) == color_range_low || value.as(Double.self) == color_range_high ? 2 : 1))
+                AxisMarks(values: [3, 4, 5, 6, 7, 10, 15, 20]) { _ in
                     AxisGridLine()
                     AxisTick()
                     AxisValueLabel()
                 }
             }
-            .chartYScale(domain: graph_bounds_low ... graph_bounds_high, type: .log)
+            .chartYScale(domain: prefs.graph.boundsLower ... prefs.graph.boundsHigher, type: .log)
             .padding(.top, 8)
-            .frame(height: verticalSizeClass == .compact ? geometry.size.height : geometry.size.height )
+            .frame(height: verticalSizeClass == .compact ? geometry.size.height : geometry.size.height)
             .frame(maxWidth: .infinity)
         }
     }
