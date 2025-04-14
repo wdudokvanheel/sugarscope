@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2B1628282DAD002700652A69 /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1628272DAD002500652A69 /* ColorHex.swift */; };
+		2B16282A2DAD3A8200652A69 /* GlucoseValuesSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1628292DAD3A7900652A69 /* GlucoseValuesSettingsView.swift */; };
+		2B16282C2DAD403800652A69 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B16282B2DAD403800652A69 /* ThemeSettingsView.swift */; };
 		2B1C9E7A2D5A15CA00CA7861 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E792D5A15CA00CA7861 /* MainView.swift */; };
 		2B1C9E7C2D5A162E00CA7861 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E7B2D5A162E00CA7861 /* GraphView.swift */; };
 		2B1C9E802D5A170700CA7861 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E7F2D5A170700CA7861 /* DataSource.swift */; };
 		2B1C9E822D5A287100CA7861 /* DataSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E812D5A287100CA7861 /* DataSourceService.swift */; };
-		2B1C9E862D5A4E6F00CA7861 /* ConfigurationWizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E852D5A4E6F00CA7861 /* ConfigurationWizard.swift */; };
+		2B1C9E862D5A4E6F00CA7861 /* ConnectionConfigurationEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E852D5A4E6F00CA7861 /* ConnectionConfigurationEditor.swift */; };
 		2B1C9E892D5A4F4D00CA7861 /* NightscoutConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E882D5A4F4D00CA7861 /* NightscoutConfigurationView.swift */; };
 		2B1C9E8B2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E8A2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift */; };
 		2B1C9E8D2D5A518C00CA7861 /* DataSourceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E8C2D5A518C00CA7861 /* DataSourceConfiguration.swift */; };
@@ -30,18 +32,20 @@
 		2B4BAB4C2DAAB6C000D81158 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4BAB4B2DAAB6C000D81158 /* Preference.swift */; };
 		2B4BAB522DAAB71400D81158 /* PreferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4BAB512DAAB71400D81158 /* PreferenceService.swift */; };
 		2B4BAB542DAAB91E00D81158 /* PreferenceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4BAB532DAAB91E00D81158 /* PreferenceStorage.swift */; };
-		2B4ED5BC2DA9507C00ADE664 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4ED5BB2DA9507B00ADE664 /* Settings.swift */; };
+		2B4ED5BC2DA9507C00ADE664 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4ED5BB2DA9507B00ADE664 /* SettingsView.swift */; };
 		2B64B97A2D787BFE00F0BC14 /* CurrentValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64B9792D787BFE00F0BC14 /* CurrentValueView.swift */; };
 		2B64B97E2D7880FF00F0BC14 /* RealtimeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64B97D2D7880FF00F0BC14 /* RealtimeDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2B1628272DAD002500652A69 /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
+		2B1628292DAD3A7900652A69 /* GlucoseValuesSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseValuesSettingsView.swift; sourceTree = "<group>"; };
+		2B16282B2DAD403800652A69 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
 		2B1C9E792D5A15CA00CA7861 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		2B1C9E7B2D5A162E00CA7861 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		2B1C9E7F2D5A170700CA7861 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		2B1C9E812D5A287100CA7861 /* DataSourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceService.swift; sourceTree = "<group>"; };
-		2B1C9E852D5A4E6F00CA7861 /* ConfigurationWizard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationWizard.swift; sourceTree = "<group>"; };
+		2B1C9E852D5A4E6F00CA7861 /* ConnectionConfigurationEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionConfigurationEditor.swift; sourceTree = "<group>"; };
 		2B1C9E882D5A4F4D00CA7861 /* NightscoutConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutConfigurationView.swift; sourceTree = "<group>"; };
 		2B1C9E8A2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarScopeConfigurationView.swift; sourceTree = "<group>"; };
 		2B1C9E8C2D5A518C00CA7861 /* DataSourceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceConfiguration.swift; sourceTree = "<group>"; };
@@ -60,7 +64,7 @@
 		2B4BAB4B2DAAB6C000D81158 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		2B4BAB512DAAB71400D81158 /* PreferenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceService.swift; sourceTree = "<group>"; };
 		2B4BAB532DAAB91E00D81158 /* PreferenceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceStorage.swift; sourceTree = "<group>"; };
-		2B4ED5BB2DA9507B00ADE664 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		2B4ED5BB2DA9507B00ADE664 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2B64B9782D75EF0400F0BC14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2B64B9792D787BFE00F0BC14 /* CurrentValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentValueView.swift; sourceTree = "<group>"; };
 		2B64B97D2D7880FF00F0BC14 /* RealtimeDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeDataService.swift; sourceTree = "<group>"; };
@@ -113,10 +117,12 @@
 		2B1C9E872D5A4F2D00CA7861 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				2B4ED5BB2DA9507B00ADE664 /* Settings.swift */,
-				2B1C9E852D5A4E6F00CA7861 /* ConfigurationWizard.swift */,
+				2B16282B2DAD403800652A69 /* ThemeSettingsView.swift */,
+				2B4ED5BB2DA9507B00ADE664 /* SettingsView.swift */,
+				2B1C9E852D5A4E6F00CA7861 /* ConnectionConfigurationEditor.swift */,
 				2B1C9E882D5A4F4D00CA7861 /* NightscoutConfigurationView.swift */,
 				2B1C9E8A2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift */,
+				2B1628292DAD3A7900652A69 /* GlucoseValuesSettingsView.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 				2B1C9E8B2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift in Sources */,
 				2B64B97E2D7880FF00F0BC14 /* RealtimeDataService.swift in Sources */,
 				2B1C9E7A2D5A15CA00CA7861 /* MainView.swift in Sources */,
+				2B16282A2DAD3A8200652A69 /* GlucoseValuesSettingsView.swift in Sources */,
 				2B2854102D57A40E009E86E9 /* Calendar.swift in Sources */,
 				2B2854142D57B4BC009E86E9 /* SugarScopeDataSource.swift in Sources */,
 				2B4BAB522DAAB71400D81158 /* PreferenceService.swift in Sources */,
@@ -280,8 +287,9 @@
 				2B2854182D58B64F009E86E9 /* Double.swift in Sources */,
 				2B4BAB482DAA664C00D81158 /* OrientationView.swift in Sources */,
 				2B1C9E802D5A170700CA7861 /* DataSource.swift in Sources */,
-				2B1C9E862D5A4E6F00CA7861 /* ConfigurationWizard.swift in Sources */,
-				2B4ED5BC2DA9507C00ADE664 /* Settings.swift in Sources */,
+				2B1C9E862D5A4E6F00CA7861 /* ConnectionConfigurationEditor.swift in Sources */,
+				2B16282C2DAD403800652A69 /* ThemeSettingsView.swift in Sources */,
+				2B4ED5BC2DA9507C00ADE664 /* SettingsView.swift in Sources */,
 				2B4BAB452DAA61B300D81158 /* Colors.swift in Sources */,
 				2B1C9E822D5A287100CA7861 /* DataSourceService.swift in Sources */,
 				2B28541A2D58BA36009E86E9 /* Logger.swift in Sources */,
@@ -429,7 +437,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,7 +470,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

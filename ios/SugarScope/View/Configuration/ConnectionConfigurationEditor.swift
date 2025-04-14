@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ConfigurationWizard: View {
+struct ConnectionConfigurationEditor: View {
     @State private var selectedType: DataSourceType
     @State private var configuration: DataSourceConfiguration?
 

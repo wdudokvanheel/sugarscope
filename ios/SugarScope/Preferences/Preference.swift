@@ -5,7 +5,7 @@ import Combine
 struct Preference<Value>: DynamicProperty where Value: Codable & Equatable {
     @ObservedObject private var storage: PreferenceStorage<Value>
 
-    init(key: PrefKey, defaultValue: Value) {
+    init(key: PreferenceKey, defaultValue: Value) {
         self.storage = PreferenceStorage(key: key, defaultValue: defaultValue)
     }
 

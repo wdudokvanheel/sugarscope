@@ -16,10 +16,10 @@ struct SugarScopeApp: App {
         WindowGroup {
             NavigationView {
                 MainView()
-                    .environmentObject(preferences)
-                    .environmentObject(dataService)
-                    .environmentObject(realTimeDataSource)
             }
+            .environmentObject(preferences)
+            .environmentObject(dataService)
+            .environmentObject(realTimeDataSource)
             .navigationViewStyle(StackNavigationViewStyle())
         }
     }

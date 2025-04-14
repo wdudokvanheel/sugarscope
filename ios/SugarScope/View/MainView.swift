@@ -56,7 +56,7 @@ struct MainView: View {
                 }
             }
             else {
-                ConfigurationWizard(configuration: nil) { conf in
+                ConnectionConfigurationEditor(configuration: nil) { conf in
                     self.dataService.saveConfiguration(conf)
                 }
             }

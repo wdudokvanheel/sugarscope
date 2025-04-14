@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-enum PrefKey: String {
+enum PreferenceKey: String {
     case connection
     case graph
     case theme
@@ -17,10 +17,10 @@ struct Graph: Encodable, Decodable, Equatable {
 
 struct Theme: Encodable, Decodable, Equatable {
     var background: String
-    let low: String
-    let inRange: String
-    let high: String
-    let upper: String
+    var low: String
+    var inRange: String
+    var high: String
+    var upper: String
 }
 
 let defaultTheme = Theme(
@@ -49,8 +49,6 @@ class PreferenceService: ObservableObject {
     @Preference(key: .bgHigh, defaultValue: 7.0)
     var bgHigh: Double
 
-    @Preference(key: .bgLow, defaultValue: 10.0)
+    @Preference(key: .bgUpper, defaultValue: 10.0)
     var bgUpper: Double
-
-    init() {}
 }
