@@ -8,7 +8,7 @@ struct ThemeSettingsView: View {
             Section(header: Text("Main colors")) {
                 
                 ColorPicker("Background", selection: Binding<Color>(
-                    get: { Color(hex: preferenceService.theme.background) },
+                    get: { preferenceService.theme.backgroundColor },
                     set: { newColor in
                         var updatedTheme = preferenceService.theme
                         updatedTheme.background = newColor.toHex()
@@ -17,7 +17,7 @@ struct ThemeSettingsView: View {
                 ))
                 
                 ColorPicker("Low", selection: Binding<Color>(
-                    get: { Color(hex: preferenceService.theme.low) },
+                    get: { preferenceService.theme.lowColor },
                     set: { newColor in
                         var updatedTheme = preferenceService.theme
                         updatedTheme.low = newColor.toHex()
@@ -26,7 +26,7 @@ struct ThemeSettingsView: View {
                 ))
                 
                 ColorPicker("In Range", selection: Binding<Color>(
-                    get: { Color(hex: preferenceService.theme.inRange) },
+                    get: { preferenceService.theme.inRangeColor },
                     set: { newColor in
                         var updatedTheme = preferenceService.theme
                         updatedTheme.inRange = newColor.toHex()
@@ -35,7 +35,7 @@ struct ThemeSettingsView: View {
                 ))
                 
                 ColorPicker("High", selection: Binding<Color>(
-                    get: { Color(hex: preferenceService.theme.high) },
+                    get: { preferenceService.theme.highColor },
                     set: { newColor in
                         var updatedTheme = preferenceService.theme
                         updatedTheme.high = newColor.toHex()
@@ -44,7 +44,7 @@ struct ThemeSettingsView: View {
                 ))
                 
                 ColorPicker("Upper", selection: Binding<Color>(
-                    get: { Color(hex: preferenceService.theme.upper) },
+                    get: { preferenceService.theme.upperColor },
                     set: { newColor in
                         var updatedTheme = preferenceService.theme
                         updatedTheme.upper = newColor.toHex()
@@ -55,7 +55,7 @@ struct ThemeSettingsView: View {
             
             Section(header: Text("Graph")) {
                 ColorPicker("Grid X-axis/Time", selection: Binding<Color>(
-                    get: { Color(hex: preferenceService.theme.gridLinesX) },
+                    get: { preferenceService.theme.gridLinesXColor },
                     set: { newColor in
                         var updatedTheme = preferenceService.theme
                         updatedTheme.gridLinesX = newColor.toHex()
@@ -64,7 +64,7 @@ struct ThemeSettingsView: View {
                 ))
                 
                 ColorPicker("Grid Y-axis/Value", selection: Binding<Color>(
-                    get: { Color(hex: preferenceService.theme.gridLinesY) },
+                    get: { preferenceService.theme.gridLinesYColor },
                     set: { newColor in
                         var updatedTheme = preferenceService.theme
                         updatedTheme.gridLinesY = newColor.toHex()
@@ -73,7 +73,7 @@ struct ThemeSettingsView: View {
                 ))
                 
                 ColorPicker("Label X-Axis/Time", selection: Binding<Color>(
-                    get: { Color(hex: preferenceService.theme.labelAxisX) },
+                    get: { preferenceService.theme.labelAxisXColor },
                     set: { newColor in
                         var updatedTheme = preferenceService.theme
                         updatedTheme.labelAxisX = newColor.toHex()
@@ -82,10 +82,30 @@ struct ThemeSettingsView: View {
                 ))
                 
                 ColorPicker("Label Y-Axis/Value", selection: Binding<Color>(
-                    get: { Color(hex: preferenceService.theme.labelAxisY) },
+                    get: { preferenceService.theme.labelAxisYColor },
                     set: { newColor in
                         var updatedTheme = preferenceService.theme
                         updatedTheme.labelAxisY = newColor.toHex()
+                        preferenceService.theme = updatedTheme
+                    }
+                ))
+            }
+            
+            Section(header: Text("Indicator")) {
+                ColorPicker("Label", selection: Binding<Color>(
+                    get: { preferenceService.theme.indicatorLabelColor },
+                    set: { newColor in
+                        var updatedTheme = preferenceService.theme
+                        updatedTheme.indicatorLabel = newColor.toHex()
+                        preferenceService.theme = updatedTheme
+                    }
+                ))
+                
+                ColorPicker("Icon", selection: Binding<Color>(
+                    get: { preferenceService.theme.indicatorIconColor },
+                    set: { newColor in
+                        var updatedTheme = preferenceService.theme
+                        updatedTheme.indicatorIcon = newColor.toHex()
                         preferenceService.theme = updatedTheme
                     }
                 ))

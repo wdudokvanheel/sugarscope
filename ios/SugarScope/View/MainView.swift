@@ -20,8 +20,8 @@ struct MainView: View {
                                         .frame(maxWidth: .infinity, maxHeight: geom.size.height * 0.3 - 12)
                                     NavigationLink(destination: SettingsView(dataService: dataService)) {
                                         Image(systemName: "gear")
-                                            .foregroundStyle(.black)
-                                            .padding(.top, 12 + 8)
+                                            .foregroundStyle(prefs.theme.indicatorIconColor)
+                                            .padding(.top, 8)
                                             .padding(.trailing, 8)
                                     }
                                 }

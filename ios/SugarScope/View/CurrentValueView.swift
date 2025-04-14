@@ -20,21 +20,18 @@ struct CurrentValueView: View {
 
     var body: some View {
         VStack {
-            VStack {}
-                .frame(maxWidth: .infinity, maxHeight: 5)
-
             ZStack {
                 VStack {
                     if let value = realTimeDataService.currentValue {
                         Text(String(format: "%.1f", value))
                             .font(.system(size: 72))
                             .fontWeight(.semibold)
-                            .foregroundStyle(Color.black)
+                            .foregroundStyle(prefs.theme.indicatorLabelColor)
                     } else {
                         Text("???")
                             .font(.system(size: 48))
                             .fontWeight(.semibold)
-                            .foregroundStyle(Color.black)
+                            .foregroundStyle(prefs.theme.indicatorLabelColor)
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -51,7 +48,7 @@ struct CurrentValueView: View {
 
                             Text("Last updated \(lastUpdate.formatted(date: .omitted, time: .complete))")
                                 .font(.caption)
-                                .foregroundStyle(Color.black.opacity(0.6))
+                                .foregroundStyle(prefs.theme.indicatorIconColor)
                                 .padding(.vertical, 6)
                                 .padding(.horizontal, 8)
                         }

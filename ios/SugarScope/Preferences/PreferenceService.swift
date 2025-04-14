@@ -21,6 +21,8 @@ struct Theme: Encodable, Decodable, Equatable {
     var inRange: String
     var high: String
     var upper: String
+    var indicatorLabel: String
+    var indicatorIcon: String
     var gridLinesX: String
     var gridLinesY: String
     var labelAxisX: String
@@ -33,6 +35,8 @@ let defaultTheme = Theme(
     inRange: Color.green.toHex(),
     high: Color.yellow.toHex(),
     upper: Color.red.toHex(),
+    indicatorLabel: Color.black.toHex(),
+    indicatorIcon: Color.black.toHex(),
     gridLinesX: Color.gray.opacity(0.5).toHex(),
     gridLinesY: Color.gray.opacity(0.5).toHex(),
     labelAxisX: Color.gray.toHex(),
@@ -65,35 +69,43 @@ extension Theme {
     var backgroundColor: Color {
         Color(hex: background)
     }
-    
+
     var lowColor: Color {
         Color(hex: low)
     }
-    
+
     var inRangeColor: Color {
         Color(hex: inRange)
     }
-    
+
     var highColor: Color {
         Color(hex: high)
     }
-    
+
     var upperColor: Color {
         Color(hex: upper)
     }
     
+    var indicatorLabelColor: Color{
+        Color(hex: indicatorLabel)
+    }
+    
+    var indicatorIconColor: Color{
+        Color(hex: indicatorIcon)
+    }
+
     var gridLinesXColor: Color {
         Color(hex: gridLinesX)
     }
-    
+
     var gridLinesYColor: Color {
         Color(hex: gridLinesY)
     }
-    
+
     var labelAxisXColor: Color {
         Color(hex: labelAxisX)
     }
-    
+
     var labelAxisYColor: Color {
         Color(hex: labelAxisY)
     }
