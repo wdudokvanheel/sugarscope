@@ -65,17 +65,17 @@ struct ColoredLineGraph: View {
                 .foregroundStyle(
                     LinearGradient(
                         gradient: Gradient(stops: [
-                            .init(color: .red, location: 0.0),
-                            .init(color: .red, location: gradient_range_low - 0.035),
+                            .init(color: prefs.theme.lowColor, location: 0.0),
+                            .init(color: prefs.theme.lowColor, location: gradient_range_low - 0.035),
 
-                            .init(color: .green, location: gradient_range_low + 0.025),
-                            .init(color: .green, location: gradient_range_high - 0.025),
+                            .init(color: prefs.theme.inRangeColor, location: gradient_range_low + 0.025),
+                            .init(color: prefs.theme.inRangeColor, location: gradient_range_high - 0.025),
 
-                            .init(color: .yellow, location: gradient_range_high + 0.025),
-                            .init(color: .red, location: gradient_range_upper),
+                            .init(color: prefs.theme.highColor, location: gradient_range_high + 0.025),
+                            .init(color: prefs.theme.upperColor, location: gradient_range_upper),
 
-                            .init(color: .red, location: gradient_range_upper),
-                            .init(color: .red, location: 1.0)
+                            .init(color: prefs.theme.upperColor, location: gradient_range_upper),
+                            .init(color: prefs.theme.upperColor, location: 1.0)
                         ]),
                         startPoint: .bottom,
                         endPoint: .top

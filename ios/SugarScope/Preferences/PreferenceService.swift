@@ -52,3 +52,25 @@ class PreferenceService: ObservableObject {
     @Preference(key: .bgUpper, defaultValue: 10.0)
     var bgUpper: Double
 }
+
+extension Theme {
+    var backgroundColor: Color {
+        Color(hex: background)
+    }
+    
+    var lowColor: Color {
+        Color(hex: low)
+    }
+    
+    var inRangeColor: Color {
+        Color(hex: inRange)
+    }
+    
+    var highColor: Color {
+        Color(hex: high)
+    }
+    
+    var upperColor: Color {
+        Color(hex: upper)
+    }
+}
