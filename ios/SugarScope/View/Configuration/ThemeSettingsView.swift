@@ -5,7 +5,7 @@ struct ThemeSettingsView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Theme Settings")) {
+            Section(header: Text("Main colors")) {
                 
                 ColorPicker("Background", selection: Binding<Color>(
                     get: { Color(hex: preferenceService.theme.background) },
@@ -48,6 +48,44 @@ struct ThemeSettingsView: View {
                     set: { newColor in
                         var updatedTheme = preferenceService.theme
                         updatedTheme.upper = newColor.toHex()
+                        preferenceService.theme = updatedTheme
+                    }
+                ))
+            }
+            
+            Section(header: Text("Graph")) {
+                ColorPicker("Grid X-axis/Time", selection: Binding<Color>(
+                    get: { Color(hex: preferenceService.theme.gridLinesX) },
+                    set: { newColor in
+                        var updatedTheme = preferenceService.theme
+                        updatedTheme.gridLinesX = newColor.toHex()
+                        preferenceService.theme = updatedTheme
+                    }
+                ))
+                
+                ColorPicker("Grid Y-axis/Value", selection: Binding<Color>(
+                    get: { Color(hex: preferenceService.theme.gridLinesY) },
+                    set: { newColor in
+                        var updatedTheme = preferenceService.theme
+                        updatedTheme.gridLinesY = newColor.toHex()
+                        preferenceService.theme = updatedTheme
+                    }
+                ))
+                
+                ColorPicker("Label X-Axis/Time", selection: Binding<Color>(
+                    get: { Color(hex: preferenceService.theme.labelAxisX) },
+                    set: { newColor in
+                        var updatedTheme = preferenceService.theme
+                        updatedTheme.labelAxisX = newColor.toHex()
+                        preferenceService.theme = updatedTheme
+                    }
+                ))
+                
+                ColorPicker("Label Y-Axis/Value", selection: Binding<Color>(
+                    get: { Color(hex: preferenceService.theme.labelAxisY) },
+                    set: { newColor in
+                        var updatedTheme = preferenceService.theme
+                        updatedTheme.labelAxisY = newColor.toHex()
                         preferenceService.theme = updatedTheme
                     }
                 ))

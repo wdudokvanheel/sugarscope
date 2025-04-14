@@ -21,6 +21,10 @@ struct Theme: Encodable, Decodable, Equatable {
     var inRange: String
     var high: String
     var upper: String
+    var gridLinesX: String
+    var gridLinesY: String
+    var labelAxisX: String
+    var labelAxisY: String
 }
 
 let defaultTheme = Theme(
@@ -28,7 +32,11 @@ let defaultTheme = Theme(
     low: Color.red.toHex(),
     inRange: Color.green.toHex(),
     high: Color.yellow.toHex(),
-    upper: Color.red.toHex()
+    upper: Color.red.toHex(),
+    gridLinesX: Color.gray.opacity(0.5).toHex(),
+    gridLinesY: Color.gray.opacity(0.5).toHex(),
+    labelAxisX: Color.gray.toHex(),
+    labelAxisY: Color.gray.toHex()
 )
 
 let defaultGraph = Graph(boundsLower: 2.5, boundsHigher: 20.0)
@@ -39,7 +47,7 @@ class PreferenceService: ObservableObject {
 
     @Preference(key: .graph, defaultValue: defaultGraph)
     var graph: Graph
-    
+
     @Preference(key: .theme, defaultValue: defaultTheme)
     var theme: Theme
 
@@ -72,5 +80,21 @@ extension Theme {
     
     var upperColor: Color {
         Color(hex: upper)
+    }
+    
+    var gridLinesXColor: Color {
+        Color(hex: gridLinesX)
+    }
+    
+    var gridLinesYColor: Color {
+        Color(hex: gridLinesY)
+    }
+    
+    var labelAxisXColor: Color {
+        Color(hex: labelAxisX)
+    }
+    
+    var labelAxisYColor: Color {
+        Color(hex: labelAxisY)
     }
 }

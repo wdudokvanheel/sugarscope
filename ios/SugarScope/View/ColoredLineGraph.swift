@@ -90,16 +90,20 @@ struct ColoredLineGraph: View {
                 AxisMarks(values: timeRange) { value in
                     if value.index % 2 == 0 || verticalSizeClass == .compact {
                         AxisGridLine()
+                            .foregroundStyle(prefs.theme.gridLinesXColor)
                         AxisTick()
+                            .foregroundStyle(prefs.theme.gridLinesXColor)
                         AxisValueLabel(format: .dateTime.hour(.defaultDigits(amPM: .omitted)))
+                            .foregroundStyle(prefs.theme.labelAxisXColor)
                     }
                 }
             }
             .chartYAxis {
                 AxisMarks(values: [3, 4, 5, 6, 7, 10, 15, 20]) { _ in
                     AxisGridLine()
-                    AxisTick()
+                        .foregroundStyle(prefs.theme.gridLinesYColor)
                     AxisValueLabel()
+                        .foregroundStyle(prefs.theme.labelAxisYColor)
                 }
             }
             .chartYScale(domain: prefs.graph.boundsLower ... prefs.graph.boundsHigher, type: .log)
