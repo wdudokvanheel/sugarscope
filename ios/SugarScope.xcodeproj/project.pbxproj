@@ -88,14 +88,14 @@
 		2B1C9E782D5A15B000CA7861 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2BAA50F92DAE703E003981B0 /* GraphOverlayMenu.swift */,
-				2BAA50F72DAE5FBC003981B0 /* GraphRangeSelector.swift */,
 				2B4BAB492DAA674C00D81158 /* Components */,
 				2B1C9E872D5A4F2D00CA7861 /* Configuration */,
 				2B2854022D57A2CE009E86E9 /* ColoredLineGraph.swift */,
+				2B64B9792D787BFE00F0BC14 /* CurrentValueView.swift */,
+				2BAA50F92DAE703E003981B0 /* GraphOverlayMenu.swift */,
+				2BAA50F72DAE5FBC003981B0 /* GraphRangeSelector.swift */,
 				2B1C9E7B2D5A162E00CA7861 /* GraphView.swift */,
 				2B1C9E792D5A15CA00CA7861 /* MainView.swift */,
-				2B64B9792D787BFE00F0BC14 /* CurrentValueView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

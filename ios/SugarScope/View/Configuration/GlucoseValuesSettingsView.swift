@@ -2,35 +2,48 @@ import SwiftUI
 
 struct GlucoseValuesSettingsView: View {
     @EnvironmentObject var preferenceService: PreferenceService
-        
+
     var body: some View {
-        Form {
-            Section(header: Text("Blood Glucose Settings")) {
-                HStack {
-                    Text("Range low")
-                    Spacer()
-                    TextField("Low bound",
-                              value: $preferenceService.bgLow,
-                              format: .number)
+        VStack{
+            Image("SettingsBgTarget")
+                .resizable()
+                .scaledToFit()
+                .padding(.horizontal, 64)
+            
+            Form {
+                Section(header: Text("Target range")) {
+                    HStack {
+                        Text("Low")
+                        Spacer()
+                        TextField("Low bound",
+                                  value: $preferenceService.bgLow,
+                                  format: .number)
                         .keyboardType(.decimalPad)
-                }
+                        .multilineTextAlignment(.trailing)
+                        .fixedSize(horizontal: true, vertical: true)
+                    }
                     
-                HStack {
-                    Text("Range high")
-                    Spacer()
-                    TextField("High bound",
-                              value: $preferenceService.bgHigh,
-                              format: .number)
+                    HStack {
+                        Text("High")
+                        Spacer()
+                        TextField("High bound",
+                                  value: $preferenceService.bgHigh,
+                                  format: .number)
                         .keyboardType(.decimalPad)
-                }
+                        .multilineTextAlignment(.trailing)
+                        .fixedSize(horizontal: true, vertical: true)
+                    }
                     
-                HStack {
-                    Text("Range upper")
-                    Spacer()
-                    TextField("Upper bound",
-                              value: $preferenceService.bgUpper,
-                              format: .number)
+                    HStack {
+                        Text("Very high")
+                        Spacer()
+                        TextField("High bound",
+                                  value: $preferenceService.bgUpper,
+                                  format: .number)
                         .keyboardType(.decimalPad)
+                        .multilineTextAlignment(.trailing)
+                        .fixedSize(horizontal: true, vertical: true)
+                    }
                 }
             }
         }

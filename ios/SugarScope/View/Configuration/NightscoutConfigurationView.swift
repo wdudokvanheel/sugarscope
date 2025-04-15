@@ -16,32 +16,25 @@ struct NightscoutConfigurationView: View {
     }
 
     var body: some View {
-        VStack {
-            Text("Nightscout Configuration")
-                .font(.headline)
+        TextField("Server URL", text: $url)
+            .textFieldStyle(.roundedBorder)
+            .onChange(of: url) { _ in
+                updateConfiguration()
+            }
 
-            TextField("Enter URL", text: $url)
-                .textFieldStyle(.roundedBorder)
-                .padding()
-                .onChange(of: url) { _ in
-                    updateConfiguration()
-                }
-
-            SecureField("Enter API Token (optional)", text: $apiToken)
-                .textFieldStyle(.roundedBorder)
-                .padding()
-                .onChange(of: apiToken) { _ in
-                    updateConfiguration()
-                }
-        }
+        SecureField("API Token (optional)", text: $apiToken)
+            .textFieldStyle(.roundedBorder)
+            .onChange(of: apiToken) { _ in
+                updateConfiguration()
+            }
     }
 
     private func updateConfiguration() {
         configuration = url.isEmpty
-        ? nil
-        : NightscoutDataSourceConfiguration(
-            url: url,
-            apiToken: apiToken.isEmpty ? nil : apiToken
-        )
+            ? nil
+            : NightscoutDataSourceConfiguration(
+                url: url,
+                apiToken: apiToken.isEmpty ? nil : apiToken
+            )
     }
 }

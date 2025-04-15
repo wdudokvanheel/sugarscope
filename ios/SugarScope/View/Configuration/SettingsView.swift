@@ -20,6 +20,11 @@ struct SettingsView: View {
                     }
 
                 VStack {
+                    Image("SettingsConnection")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.horizontal, 64)
+                    
                     ConnectionConfigurationEditor(configuration: configuration) { conf in
                         self.dataService.saveConfiguration(conf)
                         dismiss()
@@ -31,6 +36,5 @@ struct SettingsView: View {
                 }
             }
         }
-        .navigationTitle("Settings")
     }
 }
