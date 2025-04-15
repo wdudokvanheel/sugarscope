@@ -26,12 +26,25 @@ class RealtimeDataService: ObservableObject {
     }
     
     private func startBackgroundFetch(_ datasource: DataSource) {
-        timer?.cancel()
+        stopBackgroundFetch()
         timer = Timer.publish(every: 5, on: .main, in: .common)
             .autoconnect()
             .sink { [weak self] _ in
                 self?.fetchLatestEntries(datasource)
             }
+    }
+    
+    private func stopBackgroundFetch(){
+        timer?.cancel()
+    }
+    
+    func refresh(){
+        stopBackgroundFetch()
+        self.measurements = []
+        
+        guard let datasource = self.dataSourceService.datasource else { return }
+        self.fetchLatestEntries(datasource)
+        self.startBackgroundFetch(datasource)
     }
     
     private func fetchLatestEntries(_ datasource: DataSource) {

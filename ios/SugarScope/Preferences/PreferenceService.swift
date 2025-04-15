@@ -85,12 +85,12 @@ extension Theme {
     var upperColor: Color {
         Color(hex: upper)
     }
-    
-    var indicatorLabelColor: Color{
+
+    var indicatorLabelColor: Color {
         Color(hex: indicatorLabel)
     }
-    
-    var indicatorIconColor: Color{
+
+    var indicatorIconColor: Color {
         Color(hex: indicatorIcon)
     }
 

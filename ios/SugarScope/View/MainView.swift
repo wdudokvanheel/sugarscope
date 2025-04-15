@@ -24,11 +24,12 @@ struct MainView: View {
                                             .padding(.top, 8)
                                             .padding(.trailing, 8)
                                     }
+                                    .padding(0)
                                 }
                                 GraphView(realTimeDataSource)
                                     .frame(maxWidth: .infinity, maxHeight: geom.size.height * 0.7 - 12)
                             }
-                            .padding(12)
+                            .padding(0)
                         }
                     }
                     else {

@@ -35,6 +35,8 @@
 		2B4ED5BC2DA9507C00ADE664 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4ED5BB2DA9507B00ADE664 /* SettingsView.swift */; };
 		2B64B97A2D787BFE00F0BC14 /* CurrentValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64B9792D787BFE00F0BC14 /* CurrentValueView.swift */; };
 		2B64B97E2D7880FF00F0BC14 /* RealtimeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64B97D2D7880FF00F0BC14 /* RealtimeDataService.swift */; };
+		2BAA50F82DAE5FCA003981B0 /* GraphRangeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA50F72DAE5FBC003981B0 /* GraphRangeSelector.swift */; };
+		2BAA50FA2DAE703E003981B0 /* GraphOverlayMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA50F92DAE703E003981B0 /* GraphOverlayMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		2B64B9782D75EF0400F0BC14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2B64B9792D787BFE00F0BC14 /* CurrentValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentValueView.swift; sourceTree = "<group>"; };
 		2B64B97D2D7880FF00F0BC14 /* RealtimeDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeDataService.swift; sourceTree = "<group>"; };
+		2BAA50F72DAE5FBC003981B0 /* GraphRangeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphRangeSelector.swift; sourceTree = "<group>"; };
+		2BAA50F92DAE703E003981B0 /* GraphOverlayMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphOverlayMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 		2B1C9E782D5A15B000CA7861 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2BAA50F92DAE703E003981B0 /* GraphOverlayMenu.swift */,
+				2BAA50F72DAE5FBC003981B0 /* GraphRangeSelector.swift */,
 				2B4BAB492DAA674C00D81158 /* Components */,
 				2B1C9E872D5A4F2D00CA7861 /* Configuration */,
 				2B2854022D57A2CE009E86E9 /* ColoredLineGraph.swift */,
@@ -273,6 +279,7 @@
 				2B16282A2DAD3A8200652A69 /* GlucoseValuesSettingsView.swift in Sources */,
 				2B2854102D57A40E009E86E9 /* Calendar.swift in Sources */,
 				2B2854142D57B4BC009E86E9 /* SugarScopeDataSource.swift in Sources */,
+				2BAA50F82DAE5FCA003981B0 /* GraphRangeSelector.swift in Sources */,
 				2B4BAB522DAAB71400D81158 /* PreferenceService.swift in Sources */,
 				2B4BAB542DAAB91E00D81158 /* PreferenceStorage.swift in Sources */,
 				2B1628282DAD002700652A69 /* ColorHex.swift in Sources */,
@@ -292,6 +299,7 @@
 				2B4ED5BC2DA9507C00ADE664 /* SettingsView.swift in Sources */,
 				2B4BAB452DAA61B300D81158 /* Colors.swift in Sources */,
 				2B1C9E822D5A287100CA7861 /* DataSourceService.swift in Sources */,
+				2BAA50FA2DAE703E003981B0 /* GraphOverlayMenu.swift in Sources */,
 				2B28541A2D58BA36009E86E9 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,7 +450,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitechular.prod.SugarScope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -475,7 +483,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitechular.prod.SugarScope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
