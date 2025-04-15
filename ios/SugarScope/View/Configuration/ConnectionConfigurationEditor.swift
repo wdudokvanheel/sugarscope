@@ -22,7 +22,7 @@ struct ConnectionConfigurationEditor: View {
 
     var body: some View {
         VStack {
-            Form {
+            List {
                 Section("Server Settings") {
                     Picker("Data Source Type", selection: $selectedType) {
                         Text("SugarScope").tag(DataSourceType.sugarscope)
@@ -54,9 +54,6 @@ struct ConnectionConfigurationEditor: View {
                             onSave(config)
                         }
                     }
-                    .buttonStyle(.borderedProminent)
-                    .frame(maxWidth: .infinity)
-                    .padding()
                     .disabled(configuration == nil)
                 }
             }

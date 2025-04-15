@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 
 @propertyWrapper
-struct Preference<Value>: DynamicProperty where Value: Codable & Equatable {
+struct Preference<Value: Codable & Equatable>: DynamicProperty {
     @ObservedObject private var storage: PreferenceStorage<Value>
 
     init(key: PreferenceKey, defaultValue: Value) {
@@ -17,4 +17,8 @@ struct Preference<Value>: DynamicProperty where Value: Codable & Equatable {
     var projectedValue: ObservedObject<PreferenceStorage<Value>>.Wrapper {
         $storage
     }
+    
+    var publisher: Published<Value>.Publisher {
+        storage.$value
+     }
 }

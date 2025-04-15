@@ -1,0 +1,32 @@
+[
+   {
+      "name":"Default",
+      "url":"https:\/\/www.apple.com",
+      "gridLinesX":"#8E8E93",
+      "inRange":"#30D158",
+      "low":"#FF453A",
+      "labelAxisX":"#8E8E93",
+      "background":"#000000",
+      "upper":"#FF453A",
+      "labelAxisY":"#8E8E93",
+      "gridLinesY":"#8E8E93",
+      "high":"#FFD60A",
+      "indicatorIcon":"#000000",
+      "indicatorLabel":"#000000"
+   },
+   {
+      "name":"Test Theme",
+      "url":"test.nl",
+      "indicatorIcon":"#000000",
+      "inRange":"#30D158",
+      "indicatorLabel":"#000000",
+      "gridLinesX":"#8E8E93",
+      "labelAxisX":"#8E8E93",
+      "low":"#FF453A",
+      "labelAxisY":"#8E8E93",
+      "upper":"#FF453A",
+      "gridLinesY":"#8E8E93",
+      "high":"#FFD60A",
+      "background":"#000000"
+   }
+]

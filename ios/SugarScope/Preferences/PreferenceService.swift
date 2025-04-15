@@ -1,3 +1,4 @@
+import Combine
 import Foundation
 import SwiftUI
 
@@ -10,26 +11,14 @@ enum PreferenceKey: String {
     case bgUpper
 }
 
-struct Graph: Encodable, Decodable, Equatable {
+struct GraphSettings: Encodable, Decodable, Equatable {
     let boundsLower: Double
     let boundsHigher: Double
 }
 
-struct Theme: Encodable, Decodable, Equatable {
-    var background: String
-    var low: String
-    var inRange: String
-    var high: String
-    var upper: String
-    var indicatorLabel: String
-    var indicatorIcon: String
-    var gridLinesX: String
-    var gridLinesY: String
-    var labelAxisX: String
-    var labelAxisY: String
-}
-
 let defaultTheme = Theme(
+    name: "Default",
+    url: "",
     background: Color.black.toHex(),
     low: Color.red.toHex(),
     inRange: Color.green.toHex(),
@@ -43,14 +32,14 @@ let defaultTheme = Theme(
     labelAxisY: Color.gray.toHex()
 )
 
-let defaultGraph = Graph(boundsLower: 2.5, boundsHigher: 20.0)
+let defaultGraph = GraphSettings(boundsLower: 2.5, boundsHigher: 20.0)
 
 class PreferenceService: ObservableObject {
     @Preference(key: .connection, defaultValue: nil)
     var connection: String?
 
     @Preference(key: .graph, defaultValue: defaultGraph)
-    var graph: Graph
+    var graph: GraphSettings
 
     @Preference(key: .theme, defaultValue: defaultTheme)
     var theme: Theme
@@ -63,6 +52,30 @@ class PreferenceService: ObservableObject {
 
     @Preference(key: .bgUpper, defaultValue: 10.0)
     var bgUpper: Double
+
+    private var cancellables = Set<AnyCancellable>()
+
+    init() {
+        // Propegate any changes to prefences to the observers of this service
+        self.listenForChanges(_connection, _graph, _theme, _bgLow, _bgHigh, _bgUpper)
+    }
+
+    func listenForChanges<each V>(
+        _ prefs: repeat Preference<each V>
+    ) {
+        var publishers: [AnyPublisher<Void, Never>] = []
+        let valuesTuple = (repeat (each prefs).publisher.map { _ in () }.eraseToAnyPublisher())
+
+        for publisher in repeat (each valuesTuple) {
+            publishers.append(publisher)
+        }
+
+        Publishers.MergeMany(publishers)
+            .sink { _ in
+                self.objectWillChange.send()
+            }
+            .store(in: &self.cancellables)
+    }
 }
 
 extension Theme {
