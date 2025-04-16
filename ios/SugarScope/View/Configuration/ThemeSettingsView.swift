@@ -50,7 +50,7 @@ struct ThemeSettingsView: View {
         do {
             let data = try Data(contentsOf: url)
             let themes = try JSONDecoder().decode([Theme].self, from: data)
-            return themes
+            return themes.sorted { $0.name < $1.name }
         } catch {
             print("Error reading or decoding the file: \(error)")
             return []

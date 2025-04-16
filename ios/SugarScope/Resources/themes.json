@@ -6,7 +6,7 @@
     "inRange": "#30D158",
     "low": "#FF453A",
     "labelAxisX": "#8E8E93",
-    "background": "#00FF00",
+    "background": "#000000",
     "upper": "#FF453A",
     "labelAxisY": "#8E8E93",
     "gridLinesY": "#8E8E93",
@@ -15,7 +15,67 @@
     "indicatorLabel": "#000000"
   },
   {
-    "name": "Catppuccin Latte",
+    "name": "Rosé Pine",
+    "url": "https://rosepinetheme.com",
+    "background": "#191724",
+    "indicatorIcon": "#191724",
+    "indicatorLabel": "#191724",
+    "low": "#eb6f92",
+    "high": "#f6c177",
+    "upper": "#eb6f92",
+    "inRange": "#31748f",
+    "gridLinesX": "#6e6a86",
+    "gridLinesY": "#6e6a86",
+    "labelAxisX": "#e0def4",
+    "labelAxisY": "#e0def4"
+  },
+  {
+    "name": "Rosé Pine - Moon",
+    "url": "https://rosepinetheme.com",
+    "background": "#232136",
+    "indicatorIcon": "#232136",
+    "indicatorLabel": "#232136",
+    "low": "#eb6f92",
+    "high": "#f6c177",
+    "upper": "#eb6f92",
+    "inRange": "#3e8fb0",
+    "gridLinesX": "#6e6a86",
+    "gridLinesY": "#6e6a86",
+    "labelAxisX": "#e0def4",
+    "labelAxisY": "#e0def4"
+  },
+  {
+    "name": "Rosé Pine - Dawn",
+    "url": "https://rosepinetheme.com",
+    "background": "#faf4ed",
+    "indicatorIcon": "#faf4ed",
+    "indicatorLabel": "#faf4ed",
+    "low": "#b4637a",
+    "high": "#ea9d34",
+    "upper": "#b4637a",
+    "inRange": "#286983",
+    "gridLinesX": "#9893a5",
+    "gridLinesY": "#9893a5",
+    "labelAxisX": "#575279",
+    "labelAxisY": "#575279"
+  },
+  {
+    "name": "Dracula",
+    "url": "https://draculatheme.com",
+    "background": "#282A36",
+    "indicatorIcon": "#282A36",
+    "indicatorLabel": "#282A36",
+    "low": "#FF5555",
+    "high": "#FFB86C",
+    "upper": "#FF5555",
+    "inRange": "#50FA7B",
+    "gridLinesX": "#44475A",
+    "gridLinesY": "#44475A",
+    "labelAxisX": "#F8F8F2",
+    "labelAxisY": "#F8F8F2"
+  },
+  {
+    "name": "Catppuccin - Latte",
     "url": "https://catppuccin.com",
     "background": "#eff1f5",
     "indicatorIcon": "#eff1f5",
@@ -30,7 +90,7 @@
     "labelAxisY": "#4c4f69"
   },
   {
-    "name": "Catppuccin Frappé",
+    "name": "Catppuccin - Frappé",
     "url": "https://catppuccin.com",
     "background": "#303446",
     "indicatorIcon": "#303446",
@@ -45,7 +105,7 @@
     "labelAxisY": "#c6d0f5"
   },
   {
-    "name": "Catppuccin Macchiato",
+    "name": "Catppuccin - Macchiato",
     "url": "https://catppuccin.com",
     "background": "#24273a",
     "indicatorIcon": "#24273a",
@@ -60,7 +120,7 @@
     "labelAxisY": "#cad3f5"
   },
   {
-    "name": "Catppuccin Mocha",
+    "name": "Catppuccin - Mocha",
     "url": "https://catppuccin.com",
     "background": "#1e1e2e",
     "indicatorIcon": "#1e1e2e",
