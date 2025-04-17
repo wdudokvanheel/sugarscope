@@ -22,7 +22,7 @@ struct MainView: View {
                                         Image(systemName: "gear")
                                             .foregroundStyle(prefs.theme.indicatorIconColor)
                                             .padding(.top, 8)
-                                            .padding(.trailing, 8)
+                                            .padding(.trailing, 8 + 8)
                                     }
                                     .padding(0)
                                 }

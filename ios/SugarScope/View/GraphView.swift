@@ -19,6 +19,7 @@ struct GraphView: View {
                 if !realTimeDataService.measurements.isEmpty {
                     ColoredLineGraph(data: realTimeDataService.measurements)
                         .ignoresSafeArea(.all, edges: .leading)
+                        .padding(.horizontal, 0)
 
                 } else {
                     VStack(spacing: 16) {
@@ -53,6 +54,7 @@ struct GraphView: View {
             }
         }
         .padding(0)
+        .padding(.bottom, 4)
         .contentShape(Rectangle())
     }
 

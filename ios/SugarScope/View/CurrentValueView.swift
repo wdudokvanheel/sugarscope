@@ -72,6 +72,7 @@ struct CurrentValueView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.horizontal, 8)
     }
 
     private func color_based_on_value(_ value: Double) -> Color {

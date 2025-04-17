@@ -49,14 +49,14 @@ struct ColoredLineGraph: View {
     }
 
     var body: some View {
-        GeometryReader { geometry in
+//        GeometryReader { geometry in
             Chart(data) { point in
-                AreaMark(
-                    x: .value("Time", point.date),
-                    yStart: .value("Value", prefs.graph.boundsLower),
-                    yEnd: .value("Value", point.value)
-                )
-                .foregroundStyle(Color("GraphFill").opacity(0.1))
+//                AreaMark(
+//                    x: .value("Time", point.date),
+//                    yStart: .value("Value", prefs.graph.boundsLower),
+//                    yEnd: .value("Value", point.value)
+//                )
+//                .foregroundStyle(Color("GraphFill").opacity(0.1))
 
                 LineMark(
                     x: .value("Time", point.date),
@@ -108,8 +108,8 @@ struct ColoredLineGraph: View {
             }
             .chartYScale(domain: prefs.graph.boundsLower ... prefs.graph.boundsHigher, type: .log)
             .padding(.top, 8)
-            .frame(height: verticalSizeClass == .compact ? geometry.size.height : geometry.size.height)
+//            .frame(height: verticalSizeClass == .compact ? geometry.size.height : geometry.size.height)
             .frame(maxWidth: .infinity)
         }
-    }
+//    }
 }
