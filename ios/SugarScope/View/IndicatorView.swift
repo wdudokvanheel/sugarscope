@@ -2,7 +2,7 @@ import Foundation
 import os
 import SwiftUI
 
-struct CurrentValueView: View {
+struct IndicatorView: View {
     @EnvironmentObject private var prefs: PreferenceService
     @ObservedObject private var realTimeDataService: RealtimeDataService
     @State private var animatedBackgroundColor: Color = .gray
@@ -39,6 +39,8 @@ struct CurrentValueView: View {
                     RoundedRectangle(cornerRadius: 8)
                         .fill(animatedBackgroundColor)
                         .animation(.easeInOut(duration: 0.5), value: animatedBackgroundColor)
+                    // TODO: Implement shadow support in themes?
+//                        .shadow(color: .black, radius: 1, x: 3, y: 3)
                 )
                 if let lastUpdate = realTimeDataService.lastUpdate {
                     VStack {

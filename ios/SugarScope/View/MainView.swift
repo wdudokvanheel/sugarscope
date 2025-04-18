@@ -16,7 +16,7 @@ struct MainView: View {
                         GeometryReader { geom in
                             VStack(spacing: 24) {
                                 ZStack(alignment: .topTrailing) {
-                                    CurrentValueView(realTimeDataSource)
+                                    IndicatorView(realTimeDataSource)
                                         .frame(maxWidth: .infinity, maxHeight: geom.size.height * 0.3 - 12)
                                     NavigationLink(destination: SettingsView(dataService: dataService)) {
                                         Image(systemName: "gear")
