@@ -7,78 +7,31 @@ struct ThemeSettingsView: View {
     @State var previewData: [GlucoseMeasurement] = []
 
     var body: some View {
-        GeometryReader { geom in
-            VStack {
-                ZStack(alignment: .top) {
-                    prefs.theme.backgroundColor
-                    ColoredLineGraph(data: previewData)
-                        .padding(8)
+        OrientationView { orientation in
+            switch orientation {
+                case .portrait:
+                    GeometryReader { geom in
+                        VStack(spacing: 16) {
+                            ThemeSettingsGraphPreview(previewData: previewData)
+                                .padding(.horizontal, 16)
+                                .frame(height: geom.size.height * 0.33)
 
-                    Text("Theme Preview")
-                        .font(.footnote)
-                        .foregroundStyle(prefs.theme.textColor)
-                        .padding(.horizontal, 4)
-                        .padding(.vertical, 2)
-                        .background(
-                            prefs.theme.surfaceColor
-                                .cornerRadius(4, corners: [.bottomLeft, .bottomRight])
-                        )
-                }
-                .frame(height: geom.size.height * 0.33)
-                .cornerRadius(12)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 12)
-                        .stroke(prefs.theme.surfaceColor, lineWidth: 2)
-                )
-                .padding(.horizontal, 16)
-
-                ThemedSection {
-                    ScrollView {
-                        VStack {
-                            ForEach(Array(themes.enumerated()), id: \.1.id) { index, theme in
-                                VStack(spacing: 4) {
-                                    HStack {
-                                        Text("\(theme.name)")
-                                            .font(.body)
-                                            .foregroundStyle(theme == prefs.theme ? prefs.theme.accentColor : prefs.theme.textColor)
-                                            .fontWeight(theme == prefs.theme ? .semibold : .regular)
-                                            .animation(nil, value: theme == prefs.theme)
-
-                                        if !theme.variant.isEmpty {
-                                            Text("- \(theme.variant)")
-                                                .font(.callout)
-                                                .foregroundStyle((theme == prefs.theme ? prefs.theme.accentColor : prefs.theme.textColor).opacity(0.75))
-                                                .fontWeight(theme == prefs.theme ? .regular : .light)
-                                                .animation(nil, value: theme == prefs.theme)
-                                        }
-
-                                        Spacer()
-                                        ThemeSwatch(theme)
-                                    }
-                                    .contentShape(Rectangle())
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .onTapGesture {
-                                        withAnimation(.easeIn(duration: 0.2)) {
-                                            prefs.theme = theme
-                                        }
-                                    }
-
-                                    if index < themes.count - 1 {
-                                        ThemedDivider()
-                                            .padding(.top, 2)
-                                    }
-                                }
-                            }
+                            ThemeSettingsList(themes: themes)
                         }
-                        .padding(8)
+                        .padding(.bottom, 16)
                     }
-                    .scrollBounceBehavior(.basedOnSize, axes: [.vertical])
-                    .padding(4)
-                }
+                case .landscape:
+                    HStack(spacing: 0) {
+                        ThemeSettingsGraphPreview(previewData: previewData)
+                            .padding(.leading, 16)
 
-                Spacer()
+                        ThemeSettingsList(themes: themes)
+                    }
+                    .padding(.top, 2)
+                    .padding(.bottom, 16)
             }
         }
+        .frame(maxHeight: .infinity)
         .onAppear {
             self.previewData = generatePreviewGlucoseData(minRange: prefs.graph.boundsLower, maxRange: prefs.graph.boundsHigher, low: prefs.bgLow, high: prefs.bgHigh)
             self.themes = loadThemes()
@@ -86,7 +39,7 @@ struct ThemeSettingsView: View {
     }
 
     // TODO: Move to a service
-    func loadThemes() -> [Theme] {
+    private func loadThemes() -> [Theme] {
         guard let url = Bundle.main.url(forResource: "themes", withExtension: "json") else {
             print("Could not locate themes.json file in the bundle.")
             return []
@@ -102,12 +55,13 @@ struct ThemeSettingsView: View {
         }
     }
 
+    // TODO: Move to a service or static function
     private func generatePreviewGlucoseData(
         minRange: Double,
         maxRange: Double,
         low: Double,
         high: Double,
-        noiseFraction: Double = 0.05, // max ±5% noise
+        noiseFraction: Double = 0.05,
         includeMealSpikes: Bool = true
     ) -> [GlucoseMeasurement] {
         var data: [GlucoseMeasurement] = []
@@ -184,5 +138,86 @@ struct ThemeSettingsView: View {
         }
 
         return data
+    }
+}
+
+struct ThemeSettingsGraphPreview: View {
+    @EnvironmentObject var prefs: PreferenceService
+    let previewData: [GlucoseMeasurement]
+
+    var body: some View {
+        ZStack(alignment: .top) {
+            prefs.theme.backgroundColor
+            ColoredLineGraph(data: previewData)
+                .padding(8)
+
+            Text("Theme Preview")
+                .font(.footnote)
+                .foregroundStyle(prefs.theme.textColor)
+                .padding(.horizontal, 4)
+                .padding(.vertical, 2)
+                .background(
+                    prefs.theme.surfaceColor
+                        .cornerRadius(4, corners: [.bottomLeft, .bottomRight])
+                )
+        }
+        .cornerRadius(12)
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(prefs.theme.surfaceColor, lineWidth: 2)
+        )
+    }
+}
+
+struct ThemeSettingsList: View {
+    @EnvironmentObject var prefs: PreferenceService
+
+    let themes: [Theme]
+
+    var body: some View {
+        ThemedSection {
+            ScrollView {
+                VStack {
+                    ForEach(Array(themes.enumerated()), id: \.1.id) { index, theme in
+                        VStack(spacing: 4) {
+                            HStack {
+                                Text("\(theme.name)")
+                                    .font(.body)
+                                    .foregroundStyle(theme == prefs.theme ? prefs.theme.accentColor : prefs.theme.textColor)
+                                    .fontWeight(theme == prefs.theme ? .semibold : .regular)
+                                    .animation(nil, value: theme == prefs.theme)
+
+                                if !theme.variant.isEmpty {
+                                    Text("- \(theme.variant)")
+                                        .font(.callout)
+                                        .foregroundStyle((theme == prefs.theme ? prefs.theme.accentColor : prefs.theme.textColor).opacity(0.75))
+                                        .fontWeight(theme == prefs.theme ? .regular : .light)
+                                        .animation(nil, value: theme == prefs.theme)
+                                }
+
+                                Spacer()
+                                ThemeSwatch(theme)
+                            }
+                            .contentShape(Rectangle())
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .onTapGesture {
+                                withAnimation(.easeIn(duration: 0.2)) {
+                                    prefs.theme = theme
+                                }
+                            }
+
+                            if index < themes.count - 1 {
+                                ThemedDivider()
+                                    .padding(.top, 2)
+                            }
+                        }
+                    }
+                }
+                .padding(8)
+                .padding(.trailing, 4)
+            }
+            .scrollBounceBehavior(.basedOnSize, axes: [.vertical])
+            .padding(0)
+        }
     }
 }

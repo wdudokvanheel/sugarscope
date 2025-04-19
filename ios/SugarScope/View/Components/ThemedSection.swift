@@ -19,6 +19,6 @@ struct ThemedSection<Content: View>: View {
             .clipped()
             .background(prefs.theme.surfaceColor.cornerRadius(12))
         }
-        .padding(16)
+        .padding(.horizontal, 16)
     }
 }

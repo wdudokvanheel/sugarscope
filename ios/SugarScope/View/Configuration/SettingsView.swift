@@ -27,7 +27,7 @@ struct SettingsView: View {
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
-                VStack {
+                VStack(spacing: 0) {
                     switch self.selectedTab.id {
                     case "bgvalues":
                         GlucoseValuesSettingsView()
@@ -56,6 +56,7 @@ struct SettingsView: View {
                                 .foregroundStyle(tab == selectedTab ? prefs.theme.accentColor : prefs.theme.textColor.opacity(0.65))
                             })
                         }
+                        .padding(.top, 2)
                         .frame(maxWidth: .infinity)
                     }
                 }
