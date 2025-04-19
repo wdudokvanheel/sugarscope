@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SugarScopeConfigurationView: View {
+    @EnvironmentObject var prefs: PreferenceService
     @Binding var configuration: DataSourceConfiguration?
 
     @State private var url: String = ""
@@ -14,8 +15,12 @@ struct SugarScopeConfigurationView: View {
     }
 
     var body: some View {
-        TextField("Server URL", text: $url)
-            .textFieldStyle(.roundedBorder)
+        TextField("", text: $url, prompt: Text("Server URL").foregroundColor(prefs.theme.textColor.opacity(0.5)))
+            .padding(3)
+            .background(
+                prefs.theme.backgroundColor.cornerRadius(4)
+            )
+            .foregroundStyle(prefs.theme.textColor)
             .onChange(of: url) { newValue in
                 configuration = newValue.isEmpty
                     ? nil

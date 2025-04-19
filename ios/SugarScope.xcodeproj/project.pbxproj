@@ -27,14 +27,19 @@
 		2B2854162D58AECF009E86E9 /* NightscoutDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854152D58AECF009E86E9 /* NightscoutDataSource.swift */; };
 		2B2854182D58B64F009E86E9 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854172D58B64F009E86E9 /* Double.swift */; };
 		2B28541A2D58BA36009E86E9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854192D58BA36009E86E9 /* Logger.swift */; };
+		2B329DB12DB24C4900BDDDE1 /* ThemedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B329DB02DB24C4900BDDDE1 /* ThemedSection.swift */; };
+		2B329DB32DB24CBF00BDDDE1 /* ThemedDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B329DB22DB24CBF00BDDDE1 /* ThemedDivider.swift */; };
 		2B4BAB452DAA61B300D81158 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4BAB442DAA61B000D81158 /* Colors.swift */; };
 		2B4BAB482DAA664C00D81158 /* OrientationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4BAB472DAA664700D81158 /* OrientationView.swift */; };
 		2B4BAB4C2DAAB6C000D81158 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4BAB4B2DAAB6C000D81158 /* Preference.swift */; };
 		2B4BAB522DAAB71400D81158 /* PreferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4BAB512DAAB71400D81158 /* PreferenceService.swift */; };
 		2B4BAB542DAAB91E00D81158 /* PreferenceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4BAB532DAAB91E00D81158 /* PreferenceStorage.swift */; };
 		2B4ED5BC2DA9507C00ADE664 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4ED5BB2DA9507B00ADE664 /* SettingsView.swift */; };
-		2B64B97A2D787BFE00F0BC14 /* CurrentValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64B9792D787BFE00F0BC14 /* CurrentValueView.swift */; };
+		2B64B97A2D787BFE00F0BC14 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64B9792D787BFE00F0BC14 /* IndicatorView.swift */; };
 		2B64B97E2D7880FF00F0BC14 /* RealtimeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64B97D2D7880FF00F0BC14 /* RealtimeDataService.swift */; };
+		2B7667522DB27D6A008A2009 /* Tabber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7667512DB27D67008A2009 /* Tabber.swift */; };
+		2B7667542DB2860D008A2009 /* ConnectionSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7667532DB28605008A2009 /* ConnectionSettingsView.swift */; };
+		2B7667562DB29877008A2009 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7667552DB29877008A2009 /* RoundedCorner.swift */; };
 		2BAA50F82DAE5FCA003981B0 /* GraphRangeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA50F72DAE5FBC003981B0 /* GraphRangeSelector.swift */; };
 		2BAA50FA2DAE703E003981B0 /* GraphOverlayMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA50F92DAE703E003981B0 /* GraphOverlayMenu.swift */; };
 		2BAA50FC2DAE9716003981B0 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA50FB2DAE9716003981B0 /* ThemeSettingsView.swift */; };
@@ -63,6 +68,8 @@
 		2B2854152D58AECF009E86E9 /* NightscoutDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutDataSource.swift; sourceTree = "<group>"; };
 		2B2854172D58B64F009E86E9 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		2B2854192D58BA36009E86E9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		2B329DB02DB24C4900BDDDE1 /* ThemedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedSection.swift; sourceTree = "<group>"; };
+		2B329DB22DB24CBF00BDDDE1 /* ThemedDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedDivider.swift; sourceTree = "<group>"; };
 		2B4BAB442DAA61B000D81158 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		2B4BAB472DAA664700D81158 /* OrientationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationView.swift; sourceTree = "<group>"; };
 		2B4BAB4B2DAAB6C000D81158 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
@@ -70,8 +77,11 @@
 		2B4BAB532DAAB91E00D81158 /* PreferenceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceStorage.swift; sourceTree = "<group>"; };
 		2B4ED5BB2DA9507B00ADE664 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2B64B9782D75EF0400F0BC14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		2B64B9792D787BFE00F0BC14 /* CurrentValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentValueView.swift; sourceTree = "<group>"; };
+		2B64B9792D787BFE00F0BC14 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		2B64B97D2D7880FF00F0BC14 /* RealtimeDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeDataService.swift; sourceTree = "<group>"; };
+		2B7667512DB27D67008A2009 /* Tabber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabber.swift; sourceTree = "<group>"; };
+		2B7667532DB28605008A2009 /* ConnectionSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSettingsView.swift; sourceTree = "<group>"; };
+		2B7667552DB29877008A2009 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		2BAA50F72DAE5FBC003981B0 /* GraphRangeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphRangeSelector.swift; sourceTree = "<group>"; };
 		2BAA50F92DAE703E003981B0 /* GraphOverlayMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphOverlayMenu.swift; sourceTree = "<group>"; };
 		2BAA50FB2DAE9716003981B0 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
@@ -96,10 +106,11 @@
 		2B1C9E782D5A15B000CA7861 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2B7667512DB27D67008A2009 /* Tabber.swift */,
 				2B4BAB492DAA674C00D81158 /* Components */,
 				2B1C9E872D5A4F2D00CA7861 /* Configuration */,
 				2B2854022D57A2CE009E86E9 /* ColoredLineGraph.swift */,
-				2B64B9792D787BFE00F0BC14 /* CurrentValueView.swift */,
+				2B64B9792D787BFE00F0BC14 /* IndicatorView.swift */,
 				2BAA50F92DAE703E003981B0 /* GraphOverlayMenu.swift */,
 				2BAA50F72DAE5FBC003981B0 /* GraphRangeSelector.swift */,
 				2B1C9E7B2D5A162E00CA7861 /* GraphView.swift */,
@@ -132,6 +143,7 @@
 		2B1C9E872D5A4F2D00CA7861 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				2B7667532DB28605008A2009 /* ConnectionSettingsView.swift */,
 				2BAA50FB2DAE9716003981B0 /* ThemeSettingsView.swift */,
 				2B16282B2DAD403800652A69 /* ThemeColorSettingsView.swift */,
 				2B4ED5BB2DA9507B00ADE664 /* SettingsView.swift */,
@@ -187,6 +199,7 @@
 		2B28540E2D57A3FF009E86E9 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				2B7667552DB29877008A2009 /* RoundedCorner.swift */,
 				2B1628272DAD002500652A69 /* ColorHex.swift */,
 				2B4BAB442DAA61B000D81158 /* Colors.swift */,
 				2B28540F2D57A40E009E86E9 /* Calendar.swift */,
@@ -199,6 +212,8 @@
 		2B4BAB492DAA674C00D81158 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2B329DB22DB24CBF00BDDDE1 /* ThemedDivider.swift */,
+				2B329DB02DB24C4900BDDDE1 /* ThemedSection.swift */,
 				2B4BAB472DAA664700D81158 /* OrientationView.swift */,
 			);
 			path = Components;
@@ -293,12 +308,14 @@
 				2B16282A2DAD3A8200652A69 /* GlucoseValuesSettingsView.swift in Sources */,
 				2B2854102D57A40E009E86E9 /* Calendar.swift in Sources */,
 				2BAA50FE2DAE9883003981B0 /* Theme.swift in Sources */,
+				2B7667522DB27D6A008A2009 /* Tabber.swift in Sources */,
 				2B2854142D57B4BC009E86E9 /* SugarScopeDataSource.swift in Sources */,
 				2BAA50F82DAE5FCA003981B0 /* GraphRangeSelector.swift in Sources */,
 				2B4BAB522DAAB71400D81158 /* PreferenceService.swift in Sources */,
 				2B4BAB542DAAB91E00D81158 /* PreferenceStorage.swift in Sources */,
+				2B7667562DB29877008A2009 /* RoundedCorner.swift in Sources */,
 				2B1628282DAD002700652A69 /* ColorHex.swift in Sources */,
-				2B64B97A2D787BFE00F0BC14 /* CurrentValueView.swift in Sources */,
+				2B64B97A2D787BFE00F0BC14 /* IndicatorView.swift in Sources */,
 				2B2854012D57A2CE009E86E9 /* SugarScopeApp.swift in Sources */,
 				2B1C9E7C2D5A162E00CA7861 /* GraphView.swift in Sources */,
 				2B2854122D57A718009E86E9 /* GlucoseMeasurement.swift in Sources */,
@@ -312,10 +329,13 @@
 				2B1C9E802D5A170700CA7861 /* DataSource.swift in Sources */,
 				2B1C9E862D5A4E6F00CA7861 /* ConnectionConfigurationEditor.swift in Sources */,
 				2B16282C2DAD403800652A69 /* ThemeColorSettingsView.swift in Sources */,
+				2B329DB12DB24C4900BDDDE1 /* ThemedSection.swift in Sources */,
 				2B4ED5BC2DA9507C00ADE664 /* SettingsView.swift in Sources */,
 				2B4BAB452DAA61B300D81158 /* Colors.swift in Sources */,
 				2B1C9E822D5A287100CA7861 /* DataSourceService.swift in Sources */,
+				2B7667542DB2860D008A2009 /* ConnectionSettingsView.swift in Sources */,
 				2BAA50FA2DAE703E003981B0 /* GraphOverlayMenu.swift in Sources */,
+				2B329DB32DB24CBF00BDDDE1 /* ThemedDivider.swift in Sources */,
 				2B28541A2D58BA36009E86E9 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

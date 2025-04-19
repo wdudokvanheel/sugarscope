@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct NightscoutConfigurationView: View {
+    @EnvironmentObject var prefs: PreferenceService
+
     @Binding var configuration: DataSourceConfiguration?
 
     @State private var url: String = ""
@@ -16,14 +18,22 @@ struct NightscoutConfigurationView: View {
     }
 
     var body: some View {
-        TextField("Server URL", text: $url)
-            .textFieldStyle(.roundedBorder)
+        TextField("", text: $url, prompt: Text("Server URL").foregroundColor(prefs.theme.textColor.opacity(0.5)))
+            .padding(3)
+            .background(
+                prefs.theme.backgroundColor.cornerRadius(4)
+            )
+            .foregroundStyle(prefs.theme.textColor)
             .onChange(of: url) { _ in
                 updateConfiguration()
             }
 
-        SecureField("API Token (optional)", text: $apiToken)
-            .textFieldStyle(.roundedBorder)
+        SecureField("", text: $apiToken, prompt: Text("API Token (optional)").foregroundColor(prefs.theme.textColor.opacity(0.5)))
+            .padding(3)
+            .background(
+                prefs.theme.backgroundColor.cornerRadius(4)
+            )
+            .foregroundStyle(prefs.theme.textColor)
             .onChange(of: apiToken) { _ in
                 updateConfiguration()
             }

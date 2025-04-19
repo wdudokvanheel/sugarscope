@@ -2,7 +2,7 @@ import Combine
 import Foundation
 import SwiftUI
 
-enum PreferenceKey: String {
+enum SugarScopePreferenceKey: String {
     case connection
     case graph
     case theme
@@ -20,6 +20,9 @@ let defaultTheme = Theme(
     name: "Default",
     url: "",
     background: Color.black.toHex(),
+    surface: "#1a1a1c",
+    accent: "#BF5AF2",
+    text: Color.white.toHex(),
     low: Color.red.toHex(),
     inRange: Color.green.toHex(),
     high: Color.yellow.toHex(),
@@ -76,11 +79,27 @@ class PreferenceService: ObservableObject {
             }
             .store(in: &self.cancellables)
     }
+
+    var themePublisher: Published<Theme>.Publisher{
+        self._theme.publisher
+    }
 }
 
 extension Theme {
     var backgroundColor: Color {
         Color(hex: background)
+    }
+
+    var surfaceColor: Color {
+        Color(hex: surface)
+    }
+
+    var textColor: Color {
+        Color(hex: text)
+    }
+
+    var accentColor: Color {
+        Color(hex: accent)
     }
 
     var lowColor: Color {

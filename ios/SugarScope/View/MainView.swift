@@ -18,7 +18,7 @@ struct MainView: View {
                                 ZStack(alignment: .topTrailing) {
                                     IndicatorView(realTimeDataSource)
                                         .frame(maxWidth: .infinity, maxHeight: geom.size.height * 0.3 - 12)
-                                    NavigationLink(destination: SettingsView(dataService: dataService)) {
+                                    NavigationLink(destination: SettingsView()) {
                                         Image(systemName: "gear")
                                             .foregroundStyle(prefs.theme.indicatorIconColor)
                                             .padding(.top, 8)

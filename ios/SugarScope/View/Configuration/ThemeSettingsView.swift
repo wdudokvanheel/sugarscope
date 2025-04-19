@@ -1,22 +1,6 @@
 import Foundation
 import SwiftUI
 
-let theme = Theme(
-    name: "Default",
-    url: "",
-    background: Color.black.toHex(),
-    low: Color.red.toHex(),
-    inRange: Color.green.toHex(),
-    high: Color.yellow.toHex(),
-    upper: Color.red.toHex(),
-    indicatorLabel: Color.black.toHex(),
-    indicatorIcon: Color.black.toHex(),
-    gridLinesX: Color.gray.opacity(0.5).toHex(),
-    gridLinesY: Color.gray.opacity(0.5).toHex(),
-    labelAxisX: Color.gray.toHex(),
-    labelAxisY: Color.gray.toHex()
-)
-
 struct ThemeSettingsView: View {
     @EnvironmentObject var prefs: PreferenceService
     @State var themes: [Theme] = []
@@ -25,30 +9,60 @@ struct ThemeSettingsView: View {
     var body: some View {
         GeometryReader { geom in
             VStack {
-                ZStack {
+                ZStack(alignment: .top) {
                     prefs.theme.backgroundColor
                     ColoredLineGraph(data: previewData)
                         .padding(8)
+
+                    Text("Theme Preview")
+                        .font(.footnote)
+                        .foregroundStyle(prefs.theme.textColor)
+                        .padding(.horizontal, 4)
+                        .padding(.vertical, 2)
+                        .background(
+                            prefs.theme.surfaceColor
+                                .cornerRadius(4, corners: [.bottomLeft, .bottomRight])
+                        )
                 }
                 .frame(height: geom.size.height * 0.33)
                 .cornerRadius(12)
-                .padding(.horizontal, 8)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(prefs.theme.surfaceColor, lineWidth: 2)
+                )
+                .padding(.horizontal, 16)
 
-                List {
-                    Section(header: Text("Select theme")) {
-                        ForEach(themes) { theme in
-                            HStack {
-                                if theme == prefs.theme {
-                                    Image(systemName: "checkmark")
+                ThemedSection {
+                    ScrollView {
+                        VStack {
+                            ForEach(Array(themes.enumerated()), id: \.1.id) { index, theme in
+                                VStack(spacing: 4) {
+                                    HStack {
+                                        Text("\(theme.name)")
+                                            .font(.body)
+                                            .foregroundStyle(theme == prefs.theme ? prefs.theme.accentColor : prefs.theme.textColor)
+                                            .fontWeight(theme == prefs.theme ? .semibold : .regular)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                    }
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .onTapGesture {
+                                        prefs.theme = theme
+                                    }
+
+                                    if index < themes.count - 1 {
+                                        ThemedDivider()
+                                            .padding(.top, 2)
+                                    }
                                 }
-                                Text("\(theme.name)")
-                            }
-                            .onTapGesture {
-                                prefs.theme = theme
                             }
                         }
+                        .padding(8)
                     }
+                    .padding(4)
+//                    .fixedSize(horizontal: false, vertical: true)
                 }
+
+                Spacer()
             }
         }
         .onAppear {

@@ -2,6 +2,9 @@ struct Theme: Identifiable, Encodable, Decodable, Equatable {
     var name: String
     var url: String
     var background: String
+    var surface: String
+    var accent: String
+    var text: String
     var low: String
     var inRange: String
     var high: String
