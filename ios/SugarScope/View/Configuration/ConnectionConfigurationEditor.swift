@@ -73,6 +73,5 @@ struct ConnectionConfigurationEditor: View {
             }
             .padding(8)
         }
-        .padding(8)
     }
 }
