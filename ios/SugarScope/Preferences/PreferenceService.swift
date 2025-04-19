@@ -18,6 +18,7 @@ struct GraphSettings: Encodable, Decodable, Equatable {
 
 let defaultTheme = Theme(
     name: "Default",
+    variant: "",
     url: "",
     background: Color.black.toHex(),
     surface: "#1a1a1c",

@@ -15,10 +15,11 @@
     "gridLinesY": "#8E8E93",
     "high": "#FFD60A",
     "indicatorIcon": "#000000",
-    "indicatorLabel": "#000000"
+    "indicatorLabel": "#000000",
+    "variant": ""
   },
   {
-    "name": "Catppuccin - Latte",
+    "name": "Catppuccin",
     "url": "https://catppuccin.com",
     "background": "#dce0e8",
     "surface": "#ccd0da",
@@ -33,10 +34,11 @@
     "gridLinesX": "#6c6f85",
     "gridLinesY": "#6c6f85",
     "labelAxisX": "#4c4f69",
-    "labelAxisY": "#4c4f69"
+    "labelAxisY": "#4c4f69",
+    "variant": "Latte"
   },
   {
-    "name": "Catppuccin - Frappé",
+    "name": "Catppuccin",
     "url": "https://catppuccin.com",
     "background": "#232634",
     "surface": "#414559",
@@ -51,10 +53,11 @@
     "gridLinesX": "#a5adce",
     "gridLinesY": "#a5adce",
     "labelAxisX": "#c6d0f5",
-    "labelAxisY": "#c6d0f5"
+    "labelAxisY": "#c6d0f5",
+    "variant": "Frappé"
   },
   {
-    "name": "Catppuccin - Macchiato",
+    "name": "Catppuccin",
     "url": "https://catppuccin.com",
     "background": "#181926",
     "surface": "#363a4f",
@@ -69,10 +72,11 @@
     "gridLinesX": "#a5adcb",
     "gridLinesY": "#a5adcb",
     "labelAxisX": "#cad3f5",
-    "labelAxisY": "#cad3f5"
+    "labelAxisY": "#cad3f5",
+    "variant": "Macchiato"
   },
   {
-    "name": "Catppuccin - Mocha",
+    "name": "Catppuccin",
     "url": "https://catppuccin.com",
     "background": "#11111b",
     "surface": "#313244",
@@ -87,7 +91,8 @@
     "gridLinesX": "#a6adc8",
     "gridLinesY": "#a6adc8",
     "labelAxisX": "#cdd6f4",
-    "labelAxisY": "#cdd6f4"
+    "labelAxisY": "#cdd6f4",
+    "variant": "Mocha"
   },
   {
     "name": "Gruvbox",
@@ -105,7 +110,8 @@
     "gridLinesX": "#a89984",
     "gridLinesY": "#a89984",
     "labelAxisX": "#ebdbb2",
-    "labelAxisY": "#ebdbb2"
+    "labelAxisY": "#ebdbb2",
+    "variant": ""
   },
   {
     "name": "Rosé Pine",
@@ -123,10 +129,11 @@
     "gridLinesX": "#6e6a86",
     "gridLinesY": "#6e6a86",
     "labelAxisX": "#e0def4",
-    "labelAxisY": "#e0def4"
+    "labelAxisY": "#e0def4",
+    "variant": ""
   },
   {
-    "name": "Rosé Pine - Moon",
+    "name": "Rosé Pine",
     "url": "https://rosepinetheme.com",
     "background": "#232136",
     "surface": "#2a273f",
@@ -141,10 +148,11 @@
     "gridLinesX": "#6e6a86",
     "gridLinesY": "#6e6a86",
     "labelAxisX": "#e0def4",
-    "labelAxisY": "#e0def4"
+    "labelAxisY": "#e0def4",
+    "variant": "Moon"
   },
   {
-    "name": "Rosé Pine - Dawn",
+    "name": "Rosé Pine",
     "url": "https://rosepinetheme.com",
     "background": "#faf4ed",
     "surface": "#fffaf3",
@@ -159,10 +167,11 @@
     "gridLinesX": "#9893a5",
     "gridLinesY": "#9893a5",
     "labelAxisX": "#575279",
-    "labelAxisY": "#575279"
+    "labelAxisY": "#575279",
+    "variant": "Dawn"
   },
   {
-    "name": "Neon Spark - Racer",
+    "name": "Neon Spark",
     "url": "",
     "background": "#000000",
     "surface": "#121212",
@@ -177,10 +186,11 @@
     "gridLinesX": "#444444",
     "gridLinesY": "#444444",
     "labelAxisX": "#ffffff",
-    "labelAxisY": "#ffffff"
+    "labelAxisY": "#ffffff",
+    "variant": "Racer"
   },
   {
-    "name": "Neon Spark - Glow",
+    "name": "Neon Spark",
     "url": "",
     "background": "#000000",
     "surface": "#111111",
@@ -195,7 +205,8 @@
     "gridLinesX": "#444444",
     "gridLinesY": "#444444",
     "labelAxisX": "#ffffff",
-    "labelAxisY": "#ffffff"
+    "labelAxisY": "#ffffff",
+    "variant": "Glow"
   },
   {
     "name": "Scarlet Blaze",
@@ -213,7 +224,8 @@
     "gridLinesX": "#333333",
     "gridLinesY": "#333333",
     "labelAxisX": "#ffffff",
-    "labelAxisY": "#ffffff"
+    "labelAxisY": "#ffffff",
+    "variant": ""
   },
   {
     "name": "Pink Surge",
@@ -231,7 +243,8 @@
     "gridLinesX": "#555555",
     "gridLinesY": "#555555",
     "labelAxisX": "#ffffff",
-    "labelAxisY": "#ffffff"
+    "labelAxisY": "#ffffff",
+    "variant": ""
   },
   {
     "name": "Crimson King",
@@ -249,7 +262,8 @@
     "gridLinesX": "#555555",
     "gridLinesY": "#555555",
     "labelAxisX": "#ffffff",
-    "labelAxisY": "#ffffff"
+    "labelAxisY": "#ffffff",
+    "variant": ""
   },
   {
     "name": "Dracula",
@@ -267,6 +281,7 @@
     "gridLinesX": "#44475A",
     "gridLinesY": "#44475A",
     "labelAxisX": "#F8F8F2",
-    "labelAxisY": "#F8F8F2"
+    "labelAxisY": "#F8F8F2",
+    "variant": ""
   }
 ]

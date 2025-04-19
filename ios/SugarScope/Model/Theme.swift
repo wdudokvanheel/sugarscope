@@ -1,5 +1,6 @@
 struct Theme: Identifiable, Encodable, Decodable, Equatable {
     var name: String
+    var variant: String
     var url: String
     var background: String
     var surface: String
@@ -17,6 +18,6 @@ struct Theme: Identifiable, Encodable, Decodable, Equatable {
     var labelAxisY: String
     
     var id: String  {
-        name
+        name + variant
     }
 }

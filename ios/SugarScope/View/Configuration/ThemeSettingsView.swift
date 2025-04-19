@@ -42,7 +42,15 @@ struct ThemeSettingsView: View {
                                             .font(.body)
                                             .foregroundStyle(theme == prefs.theme ? prefs.theme.accentColor : prefs.theme.textColor)
                                             .fontWeight(theme == prefs.theme ? .semibold : .regular)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
+
+                                        if !theme.variant.isEmpty {
+                                            Text("- \(theme.variant)")
+                                                .font(.body)
+                                                .foregroundStyle((theme == prefs.theme ? prefs.theme.accentColor : prefs.theme.textColor).opacity(0.75))
+                                                .fontWeight(theme == prefs.theme ? .regular : .light)
+                                        }
+                                        
+                                        Spacer()
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .onTapGesture {
