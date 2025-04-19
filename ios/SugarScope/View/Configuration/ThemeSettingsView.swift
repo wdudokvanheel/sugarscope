@@ -49,8 +49,9 @@ struct ThemeSettingsView: View {
                                                 .foregroundStyle((theme == prefs.theme ? prefs.theme.accentColor : prefs.theme.textColor).opacity(0.75))
                                                 .fontWeight(theme == prefs.theme ? .regular : .light)
                                         }
-                                        
+
                                         Spacer()
+                                        ThemeSwatch(theme)
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .onTapGesture {
@@ -67,7 +68,6 @@ struct ThemeSettingsView: View {
                         .padding(8)
                     }
                     .padding(4)
-//                    .fixedSize(horizontal: false, vertical: true)
                 }
 
                 Spacer()
@@ -79,6 +79,7 @@ struct ThemeSettingsView: View {
         }
     }
 
+    // TODO: Move to a service
     func loadThemes() -> [Theme] {
         guard let url = Bundle.main.url(forResource: "themes", withExtension: "json") else {
             print("Could not locate themes.json file in the bundle.")
