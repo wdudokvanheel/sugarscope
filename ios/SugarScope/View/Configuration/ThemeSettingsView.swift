@@ -55,6 +55,7 @@ struct ThemeSettingsView: View {
                                         Spacer()
                                         ThemeSwatch(theme)
                                     }
+                                    .contentShape(Rectangle())
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .onTapGesture {
                                         withAnimation(.easeIn(duration: 0.2)) {
