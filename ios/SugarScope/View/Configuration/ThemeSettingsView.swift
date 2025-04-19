@@ -72,6 +72,7 @@ struct ThemeSettingsView: View {
                         }
                         .padding(8)
                     }
+                    .scrollBounceBehavior(.basedOnSize, axes: [.vertical])
                     .padding(4)
                 }
 

@@ -33,24 +33,28 @@ struct MainView: View {
                         }
                     }
                     else {
-                        ZStack {
+                        ZStack(alignment: .top) {
                             GraphView(realTimeDataSource)
-                            if let value = realTimeDataSource.currentValue {
-                                VStack {
-                                    HStack {
-                                        Text(String(format: "%.1f", value))
-                                            .font(.title2)
-                                            .padding(8)
-                                            .foregroundStyle(Color.black)
-                                            .background(
-                                                RoundedRectangle(cornerRadius: 4)
-                                                    .fill(value < 4 || value > 7 ? Color.red : Color.green)
-                                            )
-                                        Spacer()
-                                    }
-                                    Spacer()
+                            HStack(alignment: .top) {
+                                if let value = realTimeDataSource.currentValue {
+                                    Text(String(format: "%.1f", value))
+                                        .font(.title2)
+                                        .padding(8)
+                                        .foregroundStyle(Color.black)
+                                        .background(
+                                            RoundedRectangle(cornerRadius: 4)
+                                                .fill(value < 4 || value > 7 ? Color.red : Color.green)
+                                        )
+                                        .padding()
                                 }
-                                .padding()
+                                Spacer()
+                                NavigationLink(destination: SettingsView()) {
+                                    Image(systemName: "gear")
+                                        .foregroundStyle(prefs.theme.accentColor)
+                                        .padding(.top, 8)
+                                        .padding(.trailing, 8 + 8)
+                                }
+                                .padding(0)
                             }
                         }
                     }

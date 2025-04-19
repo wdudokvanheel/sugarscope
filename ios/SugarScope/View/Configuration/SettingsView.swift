@@ -8,6 +8,7 @@ struct SettingsTab: Identifiable, Equatable {
     var icon: String
 }
 
+///  SwiftUI's TabView is hard to customize with dynamic colors, which the theming requires, so the SettingsView uses a custom tab view
 struct SettingsView: View {
     @EnvironmentObject var prefs: PreferenceService
     @Environment(\.presentationMode) var presentationMode: Binding
