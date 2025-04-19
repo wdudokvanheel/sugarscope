@@ -20,6 +20,7 @@ struct GraphView: View {
                     ColoredLineGraph(data: realTimeDataService.measurements)
                         .ignoresSafeArea(.all, edges: .leading)
                         .padding(.horizontal, 0)
+                        .padding(.trailing, 2)
 
                 } else {
                     VStack(spacing: 16) {
@@ -29,14 +30,15 @@ struct GraphView: View {
                         Text("Loading graph data")
                             .fontWeight(.thin)
                     }
+                    .foregroundStyle(prefs.theme.accentColor)
                     .frame(maxWidth: .infinity)
                 }
             }
             .simultaneousGesture(
                 DragGesture(minimumDistance: 0)
                     .onChanged { _ in
-                        if !showOverlay {
-                            showOverlay = true
+                        withAnimation{
+                            showOverlay.toggle()
                         }
                         resetHideTimer()
                     }
@@ -50,6 +52,7 @@ struct GraphView: View {
 
                     resetHideTimer()
                 }
+//                .opacity(showOverlay ? 1 : 0)
                 .transition(.opacity)
             }
         }
@@ -60,12 +63,14 @@ struct GraphView: View {
 
     private func resetHideTimer() {
         hideOverlayWorkItem?.cancel()
+        guard showOverlay else { return }
+
         let workItem = DispatchWorkItem {
             withAnimation {
                 showOverlay = false
             }
         }
         hideOverlayWorkItem = workItem
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: workItem)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: workItem)
     }
 }

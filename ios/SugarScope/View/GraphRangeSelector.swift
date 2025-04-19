@@ -31,8 +31,13 @@ struct GraphRangeSelector: View {
                     .tag(range)
             }
         }
+        .foregroundStyle(.red)
         .pickerStyle(.segmented)
         .onAppear {
+            UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(prefs.theme.accentColor)
+            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(prefs.theme.indicatorLabelColor)], for: .selected)
+            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(prefs.theme.textColor)], for: .normal)
+
             UISegmentedControl.appearance().backgroundColor = UIColor(prefs.theme.backgroundColor)
         }
         .onChange(of: selectedRange) { newValue in

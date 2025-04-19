@@ -11,27 +11,24 @@ struct GraphOverlayMenu: View {
     }
 
     var body: some View {
-        ZStack {
-            prefs.theme.backgroundColor.opacity(0.5)
-                .ignoresSafeArea(.all)
-            OrientationView { orientation in
-                VStack(alignment: .trailing) {
-                    Spacer()
-                    switch orientation {
-                    case .portrait:
+        OrientationView { orientation in
+            VStack(alignment: .trailing) {
+                Spacer()
+                switch orientation {
+                case .portrait:
+                    GraphRangeSelector(range, self.graphRangeSelected)
+                case .landscape:
+                    HStack {
+                        Spacer()
                         GraphRangeSelector(range, self.graphRangeSelected)
-                    case .landscape:
-                        HStack {
-                            Spacer()
-                            GraphRangeSelector(range, self.graphRangeSelected)
-                                .fixedSize(horizontal: true, vertical: true)
-                            Spacer()
-                        }
+                            .fixedSize(horizontal: true, vertical: true)
+                        Spacer()
                     }
+                    .padding(.bottom, 4)
                 }
-                .padding(.horizontal, 8)
             }
             .padding(.horizontal, 8)
         }
+        .padding(.horizontal, 8)
     }
 }
