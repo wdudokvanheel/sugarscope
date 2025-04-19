@@ -42,12 +42,14 @@ struct ThemeSettingsView: View {
                                             .font(.body)
                                             .foregroundStyle(theme == prefs.theme ? prefs.theme.accentColor : prefs.theme.textColor)
                                             .fontWeight(theme == prefs.theme ? .semibold : .regular)
+                                            .animation(nil, value: theme == prefs.theme)
 
                                         if !theme.variant.isEmpty {
                                             Text("- \(theme.variant)")
-                                                .font(.body)
+                                                .font(.callout)
                                                 .foregroundStyle((theme == prefs.theme ? prefs.theme.accentColor : prefs.theme.textColor).opacity(0.75))
                                                 .fontWeight(theme == prefs.theme ? .regular : .light)
+                                                .animation(nil, value: theme == prefs.theme)
                                         }
 
                                         Spacer()
@@ -55,7 +57,9 @@ struct ThemeSettingsView: View {
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .onTapGesture {
-                                        prefs.theme = theme
+                                        withAnimation(.easeIn(duration: 0.2)) {
+                                            prefs.theme = theme
+                                        }
                                     }
 
                                     if index < themes.count - 1 {

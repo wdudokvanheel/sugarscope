@@ -27,10 +27,16 @@ struct ConnectionConfigurationEditor: View {
                 Text("Server type")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundStyle(prefs.theme.textColor)
-                
+
                 Picker("Server type", selection: $selectedType) {
                     Text("SugarScope").tag(DataSourceType.sugarscope)
                     Text("Nightscout").tag(DataSourceType.nightscout)
+                }
+                .onAppear {
+                    UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(prefs.theme.accentColor)
+                    UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(prefs.theme.indicatorLabelColor)], for: .selected)
+                    UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(prefs.theme.textColor)], for: .normal)
+                    UISegmentedControl.appearance().backgroundColor = UIColor(prefs.theme.surfaceColor)
                 }
                 .pickerStyle(.segmented)
                 .onChange(of: selectedType) { newType in
@@ -45,24 +51,24 @@ struct ConnectionConfigurationEditor: View {
                         }
                     }
                 }
-                
+
                 ThemedDivider()
-                
+
                 switch selectedType {
                 case .sugarscope:
                     SugarScopeConfigurationView(configuration: $configuration)
                 case .nightscout:
                     NightscoutConfigurationView(configuration: $configuration)
                 }
-                
+
                 ThemedDivider()
-                
+
                 Button("Save connection settings") {
                     if let config = configuration {
                         onSave(config)
                     }
                 }
-                
+
                 .disabled(configuration == nil)
             }
             .padding(8)

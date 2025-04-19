@@ -10,9 +10,9 @@ struct ThemeSwatch: View {
     var body: some View {
         HStack(spacing: 0) {
             theme.accentColor
-            theme.inRangeColor
             theme.highColor
             theme.upperColor
+            theme.inRangeColor
         }
         .cornerRadius(4)
         .aspectRatio(2.5, contentMode: .fit)
