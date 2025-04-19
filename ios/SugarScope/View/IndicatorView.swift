@@ -48,9 +48,9 @@ struct IndicatorView: View {
                         HStack {
                             Spacer()
 
-                            Text("Last updated \(lastUpdate.formatted(date: .omitted, time: .complete))")
+                            Text("Last updated \(lastUpdate.formatted(date: .omitted, time: .shortened))")
                                 .font(.caption)
-                                .foregroundStyle(prefs.theme.indicatorIconColor)
+                                .foregroundStyle(prefs.theme.indicatorLabelColor.opacity(0.75))
                                 .padding(.vertical, 6)
                                 .padding(.horizontal, 8)
                         }
