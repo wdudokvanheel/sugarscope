@@ -14,14 +14,10 @@ struct SugarScopeApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            VStack {
-//                SettingsView()
-//
-//            }
             NavigationView {
                 MainView()
-                    .accentColor(preferences.theme.accentColor)
             }
+            .accentColor(preferences.theme.accentColor)
             .environmentObject(preferences)
             .environmentObject(dataService)
             .environmentObject(realTimeDataSource)

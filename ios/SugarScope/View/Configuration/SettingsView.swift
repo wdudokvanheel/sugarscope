@@ -8,10 +8,11 @@ struct SettingsTab: Identifiable, Equatable {
     var icon: String
 }
 
-struct SettingsView: View { // <Content: View>: View {
+struct SettingsView: View {
     @EnvironmentObject var prefs: PreferenceService
-
+    @Environment(\.presentationMode) var presentationMode: Binding
     @State private var selectedTab: SettingsTab
+    
     private let tabs: [SettingsTab] = [
         SettingsTab(id: "theme", label: "Themes", icon: "paintpalette.fill"),
         SettingsTab(id: "bgvalues", label: "Glucose values", icon: "drop.fill"),
@@ -61,8 +62,23 @@ struct SettingsView: View { // <Content: View>: View {
                 .frame(maxWidth: .infinity)
                 .background(prefs.theme.surfaceColor)
             }
+            .edgesIgnoringSafeArea([])
         }
+        .navigationBarItems(leading: backButton)
+        .navigationBarBackButtonHidden()
         .accentColor(prefs.theme.accentColor)
         .background(prefs.theme.backgroundColor.ignoresSafeArea())
+    }
+
+    var backButton: some View {
+        Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack(spacing: 4) {
+                Image(systemName: "chevron.left")
+                Text("Back")
+            }
+            .foregroundColor(prefs.theme.textColor)
+        }
     }
 }
