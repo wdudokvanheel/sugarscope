@@ -22,7 +22,7 @@ let defaultTheme = Theme(
     url: "",
     background: Color.black.toHex(),
     surface: "#1a1a1c",
-    accent: "#BF5AF2",
+    accent: Color.teal.toHex(),
     text: Color.white.toHex(),
     low: Color.red.toHex(),
     inRange: Color.green.toHex(),

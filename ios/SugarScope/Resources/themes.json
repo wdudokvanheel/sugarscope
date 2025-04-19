@@ -9,7 +9,7 @@
     "background": "#000000",
     "surface": "#1a1a1c",
     "text": "#FFFFFF",
-    "accent": "#BF5AF2",
+    "accent": "#40C8E0",
     "upper": "#FF453A",
     "labelAxisY": "#8E8E93",
     "gridLinesY": "#8E8E93",
@@ -228,7 +228,7 @@
     "variant": ""
   },
   {
-    "name": "Pink Surge",
+    "name": "Surge of Pink",
     "url": "",
     "background": "#000000",
     "surface": "#141414",
@@ -252,7 +252,7 @@
     "background": "#0b0b0b",
     "surface": "#1b1b1b",
     "text": "#ffffff",
-    "accent": "#a259ff",
+    "accent": "#ff299f",
     "indicatorIcon": "#ffffff",
     "indicatorLabel": "#ffffff",
     "low": "#ff299f",
