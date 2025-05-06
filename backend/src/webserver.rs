@@ -1,4 +1,5 @@
 use crate::database::{get_last_entries, InfluxConnection};
+use serde_json::json;
 use std::sync::Arc;
 use warp::Filter;
 
@@ -16,7 +17,14 @@ pub fn start_server(connection: Arc<InfluxConnection>) {
             .and(connection_filter)
             .and_then(handle_latest_request);
 
-        let routes = graph_route.with(warp::cors().allow_any_origin());
+        let status_route = base_path
+            .and(warp::path("status"))
+            .and(warp::get())
+            .map(|| warp::reply::json(&json!({ "status": "ok" })));
+
+        let routes = graph_route
+            .or(status_route)
+            .with(warp::cors().allow_any_origin());
 
         warp::serve(routes).run(([0, 0, 0, 0], 9090)).await;
     });
