@@ -80,7 +80,7 @@ struct SettingsView: View {
                 Image(systemName: "chevron.left")
                 Text("Back")
             }
-            .foregroundColor(prefs.theme.textColor)
+            .foregroundColor(prefs.theme.accentColor)
         }
     }
 }

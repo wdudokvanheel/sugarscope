@@ -15,7 +15,10 @@ struct ConnectionSettingsView: View {
         ConnectionConfigurationEditor(configuration: configuration) { conf in
             self.dataService.saveConfiguration(conf)
             dismiss()
+        } onReset: {
+            dataService.clearConfiguration()
         }
+        
         Spacer()
     }
 }

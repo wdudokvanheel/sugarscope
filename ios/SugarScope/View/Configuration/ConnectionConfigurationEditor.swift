@@ -6,10 +6,12 @@ struct ConnectionConfigurationEditor: View {
     @State private var configuration: DataSourceConfiguration?
 
     var onSave: (DataSourceConfiguration) -> Void
+    var onReset: () -> Void
 
     init(
         configuration: DataSourceConfiguration?,
-        _ onSave: @escaping (DataSourceConfiguration) -> Void
+        _ onSave: @escaping (DataSourceConfiguration) -> Void,
+        onReset: @escaping () -> Void = {}
     ) {
         if let _ = configuration as? NightscoutDataSourceConfiguration {
             _selectedType = State(initialValue: .nightscout)
@@ -19,6 +21,7 @@ struct ConnectionConfigurationEditor: View {
 
         self._configuration = State(initialValue: configuration)
         self.onSave = onSave
+        self.onReset = onReset
     }
 
     var body: some View {
@@ -67,6 +70,10 @@ struct ConnectionConfigurationEditor: View {
                     if let config = configuration {
                         onSave(config)
                     }
+                }
+
+                Button("Reset connection settings") {
+                    self.onReset()
                 }
 
                 .disabled(configuration == nil)
