@@ -13,7 +13,7 @@ struct AppView: View {
                 MainView()
             }
             else {
-                OnboardingWizard(dataService)
+                IntroView()
             }
         }
     }

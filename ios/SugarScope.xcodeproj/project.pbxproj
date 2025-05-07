@@ -43,12 +43,13 @@
 		2B7CCCB52DCA0AD700A1AED5 /* OnboardingWizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCB42DCA0ACC00A1AED5 /* OnboardingWizard.swift */; };
 		2B7CCCB72DCA0B5400A1AED5 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCB62DCA0B5200A1AED5 /* AppView.swift */; };
 		2B7CCCB92DCA0D3400A1AED5 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCB82DCA0D2C00A1AED5 /* IntroView.swift */; };
-		2B7CCCBB2DCA0DBF00A1AED5 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCBA2DCA0DBF00A1AED5 /* FeatureView.swift */; };
 		2B7CCCBD2DCA0EEF00A1AED5 /* ConnectionTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCBC2DCA0EEF00A1AED5 /* ConnectionTypeView.swift */; };
 		2B7CCCBF2DCA0F5D00A1AED5 /* ConnectionUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCBE2DCA0F5D00A1AED5 /* ConnectionUrlView.swift */; };
 		2B7CCCC12DCA0F9300A1AED5 /* ConnectionTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCC02DCA0F9300A1AED5 /* ConnectionTestView.swift */; };
 		2B7CCCC32DCA101300A1AED5 /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCC22DCA101300A1AED5 /* CompleteView.swift */; };
 		2B7CCCC52DCA106700A1AED5 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCC42DCA105700A1AED5 /* OnboardModel.swift */; };
+		2B7CCCC92DCB5C2D00A1AED5 /* ThemedNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCC82DCB5C2D00A1AED5 /* ThemedNavigationButton.swift */; };
+		2B7CCCCC2DCB674200A1AED5 /* ThemedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCCB2DCB674200A1AED5 /* ThemedScreen.swift */; };
 		2BAA50F82DAE5FCA003981B0 /* GraphRangeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA50F72DAE5FBC003981B0 /* GraphRangeSelector.swift */; };
 		2BAA50FA2DAE703E003981B0 /* GraphOverlayMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA50F92DAE703E003981B0 /* GraphOverlayMenu.swift */; };
 		2BAA50FC2DAE9716003981B0 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA50FB2DAE9716003981B0 /* ThemeSettingsView.swift */; };
@@ -94,12 +95,13 @@
 		2B7CCCB42DCA0ACC00A1AED5 /* OnboardingWizard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWizard.swift; sourceTree = "<group>"; };
 		2B7CCCB62DCA0B5200A1AED5 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		2B7CCCB82DCA0D2C00A1AED5 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
-		2B7CCCBA2DCA0DBF00A1AED5 /* FeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
 		2B7CCCBC2DCA0EEF00A1AED5 /* ConnectionTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTypeView.swift; sourceTree = "<group>"; };
 		2B7CCCBE2DCA0F5D00A1AED5 /* ConnectionUrlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionUrlView.swift; sourceTree = "<group>"; };
 		2B7CCCC02DCA0F9300A1AED5 /* ConnectionTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTestView.swift; sourceTree = "<group>"; };
 		2B7CCCC22DCA101300A1AED5 /* CompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteView.swift; sourceTree = "<group>"; };
 		2B7CCCC42DCA105700A1AED5 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
+		2B7CCCC82DCB5C2D00A1AED5 /* ThemedNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedNavigationButton.swift; sourceTree = "<group>"; };
+		2B7CCCCB2DCB674200A1AED5 /* ThemedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedScreen.swift; sourceTree = "<group>"; };
 		2BAA50F72DAE5FBC003981B0 /* GraphRangeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphRangeSelector.swift; sourceTree = "<group>"; };
 		2BAA50F92DAE703E003981B0 /* GraphOverlayMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphOverlayMenu.swift; sourceTree = "<group>"; };
 		2BAA50FB2DAE9716003981B0 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
@@ -231,6 +233,8 @@
 		2B4BAB492DAA674C00D81158 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2B7CCCC82DCB5C2D00A1AED5 /* ThemedNavigationButton.swift */,
+				2B7CCCCB2DCB674200A1AED5 /* ThemedScreen.swift */,
 				2B514CE72DB3A8FE00AC5A6A /* ThemeSwatch.swift */,
 				2B329DB22DB24CBF00BDDDE1 /* ThemedDivider.swift */,
 				2B329DB02DB24C4900BDDDE1 /* ThemedSection.swift */,
@@ -252,16 +256,23 @@
 		2B7CCCB32DCA0AAA00A1AED5 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				2B7CCCCA2DCB5EBB00A1AED5 /* Components */,
 				2B7CCCC42DCA105700A1AED5 /* OnboardModel.swift */,
 				2B7CCCB42DCA0ACC00A1AED5 /* OnboardingWizard.swift */,
 				2B7CCCB82DCA0D2C00A1AED5 /* IntroView.swift */,
-				2B7CCCBA2DCA0DBF00A1AED5 /* FeatureView.swift */,
 				2B7CCCBC2DCA0EEF00A1AED5 /* ConnectionTypeView.swift */,
 				2B7CCCBE2DCA0F5D00A1AED5 /* ConnectionUrlView.swift */,
 				2B7CCCC02DCA0F9300A1AED5 /* ConnectionTestView.swift */,
 				2B7CCCC22DCA101300A1AED5 /* CompleteView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		2B7CCCCA2DCB5EBB00A1AED5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B7CCCCC2DCB674200A1AED5 /* ThemedScreen.swift in Sources */,
 				2B7CCCBD2DCA0EEF00A1AED5 /* ConnectionTypeView.swift in Sources */,
 				2B2854032D57A2CE009E86E9 /* ColoredLineGraph.swift in Sources */,
 				2B7CCCC12DCA0F9300A1AED5 /* ConnectionTestView.swift in Sources */,
@@ -370,7 +382,7 @@
 				2B7CCCC32DCA101300A1AED5 /* CompleteView.swift in Sources */,
 				2B4BAB482DAA664C00D81158 /* OrientationView.swift in Sources */,
 				2B1C9E802D5A170700CA7861 /* DataSource.swift in Sources */,
-				2B7CCCBB2DCA0DBF00A1AED5 /* FeatureView.swift in Sources */,
+				2B7CCCC92DCB5C2D00A1AED5 /* ThemedNavigationButton.swift in Sources */,
 				2B1C9E862D5A4E6F00CA7861 /* ConnectionConfigurationEditor.swift in Sources */,
 				2B16282C2DAD403800652A69 /* ThemeColorSettingsView.swift in Sources */,
 				2B329DB12DB24C4900BDDDE1 /* ThemedSection.swift in Sources */,

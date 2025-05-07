@@ -2,6 +2,8 @@ import SwiftUI
 
 @main
 struct SugarScopeApp: App {
+    public static let APP_NAME = "SugarScope"
+
     private let preferences: PreferenceService
     private let dataService: DataSourceService
     private let realTimeDataSource: RealtimeDataService
@@ -14,11 +16,16 @@ struct SugarScopeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                AppView()
+            ZStack {
+                Color.red
+
+                NavigationView {
+                    AppView()
+                }
             }
             .accentColor(preferences.theme.accentColor)
             .environmentObject(preferences)
+            .environmentObject(OnboardModel(dataService))
             .environmentObject(dataService)
             .environmentObject(realTimeDataSource)
             .navigationViewStyle(StackNavigationViewStyle())

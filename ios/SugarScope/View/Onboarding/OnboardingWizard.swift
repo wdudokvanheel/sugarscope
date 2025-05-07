@@ -8,9 +8,7 @@ struct OnboardingWizard: View {
     }
 
     var body: some View {
-        NavigationView {
-            IntroView()
-        }
-        .environmentObject(model)
+        IntroView()
+            .environmentObject(model)
     }
 }
