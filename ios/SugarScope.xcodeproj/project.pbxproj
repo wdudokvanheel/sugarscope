@@ -50,6 +50,9 @@
 		2B7CCCC52DCA106700A1AED5 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCC42DCA105700A1AED5 /* OnboardModel.swift */; };
 		2B7CCCC92DCB5C2D00A1AED5 /* ThemedNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCC82DCB5C2D00A1AED5 /* ThemedNavigationButton.swift */; };
 		2B7CCCCC2DCB674200A1AED5 /* ThemedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCCB2DCB674200A1AED5 /* ThemedScreen.swift */; };
+		2B7CCCCE2DCB8C3A00A1AED5 /* ThemedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCCD2DCB8C3A00A1AED5 /* ThemedTextField.swift */; };
+		2B7CCCD02DCB8CFA00A1AED5 /* ThemedSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCCF2DCB8CFA00A1AED5 /* ThemedSecureField.swift */; };
+		2B7CCCD22DCB988D00A1AED5 /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCD12DCB988D00A1AED5 /* ThemedButton.swift */; };
 		2BAA50F82DAE5FCA003981B0 /* GraphRangeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA50F72DAE5FBC003981B0 /* GraphRangeSelector.swift */; };
 		2BAA50FA2DAE703E003981B0 /* GraphOverlayMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA50F92DAE703E003981B0 /* GraphOverlayMenu.swift */; };
 		2BAA50FC2DAE9716003981B0 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA50FB2DAE9716003981B0 /* ThemeSettingsView.swift */; };
@@ -102,6 +105,9 @@
 		2B7CCCC42DCA105700A1AED5 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
 		2B7CCCC82DCB5C2D00A1AED5 /* ThemedNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedNavigationButton.swift; sourceTree = "<group>"; };
 		2B7CCCCB2DCB674200A1AED5 /* ThemedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedScreen.swift; sourceTree = "<group>"; };
+		2B7CCCCD2DCB8C3A00A1AED5 /* ThemedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedTextField.swift; sourceTree = "<group>"; };
+		2B7CCCCF2DCB8CFA00A1AED5 /* ThemedSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedSecureField.swift; sourceTree = "<group>"; };
+		2B7CCCD12DCB988D00A1AED5 /* ThemedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedButton.swift; sourceTree = "<group>"; };
 		2BAA50F72DAE5FBC003981B0 /* GraphRangeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphRangeSelector.swift; sourceTree = "<group>"; };
 		2BAA50F92DAE703E003981B0 /* GraphOverlayMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphOverlayMenu.swift; sourceTree = "<group>"; };
 		2BAA50FB2DAE9716003981B0 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
@@ -233,7 +239,10 @@
 		2B4BAB492DAA674C00D81158 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2B7CCCCF2DCB8CFA00A1AED5 /* ThemedSecureField.swift */,
+				2B7CCCCD2DCB8C3A00A1AED5 /* ThemedTextField.swift */,
 				2B7CCCC82DCB5C2D00A1AED5 /* ThemedNavigationButton.swift */,
+				2B7CCCD12DCB988D00A1AED5 /* ThemedButton.swift */,
 				2B7CCCCB2DCB674200A1AED5 /* ThemedScreen.swift */,
 				2B514CE72DB3A8FE00AC5A6A /* ThemeSwatch.swift */,
 				2B329DB22DB24CBF00BDDDE1 /* ThemedDivider.swift */,
@@ -350,6 +359,7 @@
 				2B7CCCCC2DCB674200A1AED5 /* ThemedScreen.swift in Sources */,
 				2B7CCCBD2DCA0EEF00A1AED5 /* ConnectionTypeView.swift in Sources */,
 				2B2854032D57A2CE009E86E9 /* ColoredLineGraph.swift in Sources */,
+				2B7CCCCE2DCB8C3A00A1AED5 /* ThemedTextField.swift in Sources */,
 				2B7CCCC12DCA0F9300A1AED5 /* ConnectionTestView.swift in Sources */,
 				2B1C9E8B2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift in Sources */,
 				2B7CCCB72DCA0B5400A1AED5 /* AppView.swift in Sources */,
@@ -380,6 +390,8 @@
 				2B7CCCB52DCA0AD700A1AED5 /* OnboardingWizard.swift in Sources */,
 				2B2854182D58B64F009E86E9 /* Double.swift in Sources */,
 				2B7CCCC32DCA101300A1AED5 /* CompleteView.swift in Sources */,
+				2B7CCCD02DCB8CFA00A1AED5 /* ThemedSecureField.swift in Sources */,
+				2B7CCCD22DCB988D00A1AED5 /* ThemedButton.swift in Sources */,
 				2B4BAB482DAA664C00D81158 /* OrientationView.swift in Sources */,
 				2B1C9E802D5A170700CA7861 /* DataSource.swift in Sources */,
 				2B7CCCC92DCB5C2D00A1AED5 /* ThemedNavigationButton.swift in Sources */,

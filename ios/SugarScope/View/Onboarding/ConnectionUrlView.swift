@@ -5,7 +5,6 @@ struct ConnectionUrlView: View {
     @EnvironmentObject private var model: OnboardModel
 
     var body: some View {
-
         ThemedScreen {
             VStack {
                 Image("OnboardUrl")

@@ -4,43 +4,81 @@ struct ConnectionTestView: View {
     @EnvironmentObject private var prefs: PreferenceService
     @EnvironmentObject private var model: OnboardModel
 
+    var imageName: String {
+        guard let state = model.connectionTestState else {
+            return "Pending"
+        }
+
+        return switch state {
+            case .success: "Success"
+            case .failed: "Fail"
+            case .pending: "Pending"
+        }
+    }
+
     var body: some View {
-        VStack {
-            Text("Test connection")
-            Spacer()
-            Text("type: \(model.connectionType.rawValue)")
-            Text("url: \(model.url)")
-            Text("api: \(model.apiToken)")
 
-            Spacer()
-
-            if let state = model.connectionTestState {
-                switch state {
-                    case .pending: Text("Testing...")
-                    case .failed(let error): Text("Error: \(error)")
-                    case .success: Text("Succes")
-                }
+        ThemedScreen {
+            VStack {
+                Image("OnboardTest\(imageName)")
+                    .resizable()
+                    .scaledToFit()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.top, 32)
+                    .padding(.horizontal, 32)
 
                 Spacer()
-            }
 
-            Button(action: model.testConnection) {
-                Text("Test Again")
-                    .frame(maxWidth: .infinity)
-            }
-            .buttonStyle(.borderedProminent)
-            .tint(prefs.theme.accentColor)
-            .disabled(!model.canTest)
+                ThemedSection {
+                    VStack(alignment: .leading, spacing: 16) {
+                        Text("Connection test")
+                            .font(.title)
+                            .fontWeight(.semibold)
 
-            NavigationLink(destination: CompleteView()) {
-                Text("Next")
-                    .frame(maxWidth: .infinity)
+                        Text("SugarScope will now verify your connection settings to see if everything works correctly.")
+                            .fixedSize(horizontal: false, vertical: true)
+                            .font(.subheadline)
+
+                        switch model.connectionTestState {
+                            case .pending:
+                                Text("Testing connectiong, please stand by...")
+                                    .font(.subheadline)
+                            case .failed(let error):
+                                Text("Failed to connect:\n\(error)")
+                                    .foregroundStyle(prefs.theme.upperColor)
+                                    .font(.subheadline)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            case .success:
+                                Text("The connection has been verified, you can now use this server to retrieve your blood glucose values.")
+                                    .font(.subheadline)
+                            case .none:
+                                Text("Testing connectiong, please stand by...")
+                                    .font(.subheadline)
+                        }
+
+                        if model.testSuccessful {
+                            ThemedNavigationButton("Next", CompleteView())
+                                .opacity(model.testSuccessful ? 1 : 0)
+                        }
+                        else {
+                            ThemedButton("Test again", model.testConnection)
+                                .disabled(!model.canTest)
+                        }
+                    }
+                    .padding(16)
+                }
+                .padding(.top, 32)
             }
-            .buttonStyle(.borderedProminent)
-            .tint(prefs.theme.accentColor)
-            .disabled(!model.testSuccessful)
         }
-        .padding(32)
+        .foregroundStyle(prefs.theme.textColor)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text(SugarScopeApp.APP_NAME)
+                    .minimumScaleFactor(0.5)
+                    .font(.title)
+                    .foregroundStyle(prefs.theme.textColor)
+            }
+        }
         .onAppear {
             model.testConnection()
         }
