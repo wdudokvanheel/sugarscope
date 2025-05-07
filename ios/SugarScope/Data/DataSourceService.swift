@@ -61,14 +61,7 @@ class DataSourceService: ObservableObject {
         }
     }
 
-    func clearConfiguration() {
-        logger.debug("Removing current configuration")
-        configuration = nil
-        datasource = nil
-        prefences.connection = nil
-    }
-
-    private func createDataSource(from config: DataSourceConfiguration) -> DataSource? {
+    func createDataSource(from config: DataSourceConfiguration) -> DataSource? {
         switch config {
         case let config as SugarScopeDataSourceConfiguration:
             return SugarScopeDataSource(config)
@@ -78,5 +71,12 @@ class DataSourceService: ObservableObject {
             logger.error("Unregistered DataSourceConfiguration type")
             return nil
         }
+    }
+    
+    func clearConfiguration() {
+        logger.debug("Removing current configuration")
+        configuration = nil
+        datasource = nil
+        prefences.connection = nil
     }
 }
