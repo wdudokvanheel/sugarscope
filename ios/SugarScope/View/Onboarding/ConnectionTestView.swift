@@ -57,8 +57,7 @@ struct ConnectionTestView: View {
                         }
 
                         if model.testSuccessful {
-                            ThemedNavigationButton("Next", CompleteView())
-                                .opacity(model.testSuccessful ? 1 : 0)
+                            ThemedButton("Start using \(SugarScopeApp.APP_NAME)", model.completeWizard)
                         }
                         else {
                             ThemedButton("Test again", model.testConnection)

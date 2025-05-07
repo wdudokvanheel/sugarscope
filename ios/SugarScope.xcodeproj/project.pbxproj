@@ -46,7 +46,6 @@
 		2B7CCCBD2DCA0EEF00A1AED5 /* ConnectionTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCBC2DCA0EEF00A1AED5 /* ConnectionTypeView.swift */; };
 		2B7CCCBF2DCA0F5D00A1AED5 /* ConnectionUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCBE2DCA0F5D00A1AED5 /* ConnectionUrlView.swift */; };
 		2B7CCCC12DCA0F9300A1AED5 /* ConnectionTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCC02DCA0F9300A1AED5 /* ConnectionTestView.swift */; };
-		2B7CCCC32DCA101300A1AED5 /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCC22DCA101300A1AED5 /* CompleteView.swift */; };
 		2B7CCCC52DCA106700A1AED5 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCC42DCA105700A1AED5 /* OnboardModel.swift */; };
 		2B7CCCC92DCB5C2D00A1AED5 /* ThemedNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCC82DCB5C2D00A1AED5 /* ThemedNavigationButton.swift */; };
 		2B7CCCCC2DCB674200A1AED5 /* ThemedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCCB2DCB674200A1AED5 /* ThemedScreen.swift */; };
@@ -101,7 +100,6 @@
 		2B7CCCBC2DCA0EEF00A1AED5 /* ConnectionTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTypeView.swift; sourceTree = "<group>"; };
 		2B7CCCBE2DCA0F5D00A1AED5 /* ConnectionUrlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionUrlView.swift; sourceTree = "<group>"; };
 		2B7CCCC02DCA0F9300A1AED5 /* ConnectionTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTestView.swift; sourceTree = "<group>"; };
-		2B7CCCC22DCA101300A1AED5 /* CompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteView.swift; sourceTree = "<group>"; };
 		2B7CCCC42DCA105700A1AED5 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
 		2B7CCCC82DCB5C2D00A1AED5 /* ThemedNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedNavigationButton.swift; sourceTree = "<group>"; };
 		2B7CCCCB2DCB674200A1AED5 /* ThemedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedScreen.swift; sourceTree = "<group>"; };
@@ -272,7 +270,6 @@
 				2B7CCCBC2DCA0EEF00A1AED5 /* ConnectionTypeView.swift */,
 				2B7CCCBE2DCA0F5D00A1AED5 /* ConnectionUrlView.swift */,
 				2B7CCCC02DCA0F9300A1AED5 /* ConnectionTestView.swift */,
-				2B7CCCC22DCA101300A1AED5 /* CompleteView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -389,7 +386,6 @@
 				2B4BAB4C2DAAB6C000D81158 /* Preference.swift in Sources */,
 				2B7CCCB52DCA0AD700A1AED5 /* OnboardingWizard.swift in Sources */,
 				2B2854182D58B64F009E86E9 /* Double.swift in Sources */,
-				2B7CCCC32DCA101300A1AED5 /* CompleteView.swift in Sources */,
 				2B7CCCD02DCB8CFA00A1AED5 /* ThemedSecureField.swift in Sources */,
 				2B7CCCD22DCB988D00A1AED5 /* ThemedButton.swift in Sources */,
 				2B4BAB482DAA664C00D81158 /* OrientationView.swift in Sources */,

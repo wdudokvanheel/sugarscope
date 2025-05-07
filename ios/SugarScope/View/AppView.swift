@@ -16,8 +16,5 @@ struct AppView: View {
                 IntroView()
             }
         }
-        .onAppear {
-            dataService.clearConfiguration()
-        }
     }
 }
