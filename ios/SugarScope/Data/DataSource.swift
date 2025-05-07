@@ -4,6 +4,7 @@ import SwiftUI
 
 protocol DataSource {
     func getLatestEntries(hours: Int, window: Int) async throws -> [GlucoseMeasurement]
+    func testConnection() async throws -> Bool
 }
 
 enum DataSourceType: String, Codable {

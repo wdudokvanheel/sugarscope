@@ -16,13 +16,43 @@ class NightscoutDataSource: DataSource {
         self.configuration = configuration
     }
 
+    func testConnection() async throws -> Bool {
+        var url = "\(configuration.url)/api/v1/status.json"
+
+        if let token = configuration.apiToken {
+            url = url + "?token=\(token)"
+        }
+
+        guard let url = URL(string: url) else {
+            logger.error("Invalid URL")
+            throw NetworkError.invalidURL
+        }
+
+        let (data, response) = try await URLSession.shared.data(from: url)
+
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200
+        else {
+            logger.error("Invalid response from NightScout server")
+            throw NetworkError.invalidResponse
+        }
+
+        do {
+            let reply = try JSONDecoder().decode(NightscoutStatusReplyDTO.self, from: data)
+            return reply.status.lowercased() == "ok"
+        } catch {
+            logger.error("Decoding error: \(error.localizedDescription)")
+            throw error
+        }
+    }
+
     func getLatestEntries(hours: Int, window: Int) async throws -> [GlucoseMeasurement] {
         let pastTime = Date().addingTimeInterval(-TimeInterval(hours * 60 * 60))
         let timestamp = Int(pastTime.timeIntervalSince1970 * 1000)
         let requestedCount = hours * 60
 
         var url = "\(configuration.url)/api/v1/entries.json"
-        
+
         if let token = configuration.apiToken {
             url = url + "?token=\(token)"
         }
@@ -94,4 +124,8 @@ struct NightscoutEntryDTO: Decodable {
     func toGlucoseMeasurement() -> GlucoseMeasurement {
         return GlucoseMeasurement(time: date / 1000, value: sgv.toMmol())
     }
+}
+
+struct NightscoutStatusReplyDTO: Decodable {
+    let status: String
 }

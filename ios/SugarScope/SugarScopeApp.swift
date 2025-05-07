@@ -15,7 +15,7 @@ struct SugarScopeApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                MainView()
+                AppView()
             }
             .accentColor(preferences.theme.accentColor)
             .environmentObject(preferences)

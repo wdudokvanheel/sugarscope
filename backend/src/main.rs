@@ -1,25 +1,25 @@
+mod application_settings;
 mod database;
 mod librelink;
 mod measurement;
 mod webserver;
-mod application_settings;
 
-use std::env;
-use std::path::Path;
+use crate::application_settings::ApplicationSettings;
 use crate::database::{get_last_entries, InfluxConnection};
 use crate::librelink::LibreLinkSyncRuntime;
 use anyhow::{Context, Result};
+use config::{Config, Environment, File};
 use librelink_client::client::{Credentials, LibreLinkClient};
 use log;
 use log::LevelFilter;
 use serde::{Deserialize, Serialize};
 use simple_logger;
 use simple_logger::SimpleLogger;
+use std::env;
+use std::path::Path;
 use std::sync::Arc;
-use config::{Config, Environment, File};
 use tokio;
 use warp::Filter;
-use crate::application_settings::ApplicationSettings;
 
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -31,6 +31,8 @@ async fn main() -> Result<()> {
         .with_module_level("tracing", LevelFilter::Warn)
         .init()
         .expect("Failed to init logger");
+
+    log::info!("Starting SugarScope v{}", env!("CARGO_PKG_VERSION"));
 
     let settings = ApplicationSettings::load().context("Failed to load settings")?;
 
@@ -49,7 +51,10 @@ async fn main() -> Result<()> {
     Ok(())
 }
 
-pub async fn start_libre_link_sync(influx_client: Arc<InfluxConnection>, settings: &ApplicationSettings) {
+pub async fn start_libre_link_sync(
+    influx_client: Arc<InfluxConnection>,
+    settings: &ApplicationSettings,
+) {
     log::trace!("Authenticating with libre link up...");
     let libre_client = LibreLinkClient::new(
         Credentials {
