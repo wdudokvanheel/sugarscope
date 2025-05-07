@@ -14,6 +14,8 @@ struct ThemedNavigationButton<Destination: View>: View {
     var body: some View {
         NavigationLink(destination: destination) {
             Text(label)
+                .font(.headline)
+                .fontWeight(.regular)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 4)
         }

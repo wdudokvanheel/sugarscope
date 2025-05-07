@@ -9,9 +9,9 @@ struct IntroView: View {
                 Image("OnboardLogo")
                     .resizable()
                     .scaledToFit()
-                    .padding(.vertical, 32)
-                    .padding(.horizontal, 64)
-                    .frame(maxHeight: UIScreen.main.bounds.height * 0.3)
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.top, 32)
+                    .padding(.horizontal, 32)
 
                 Spacer()
 
@@ -22,26 +22,25 @@ struct IntroView: View {
                             .fontWeight(.semibold)
 
                         Text("Beautiful blood glucose visualization for diabetics")
+                            .fixedSize(horizontal: false, vertical: true)
                             .font(.subheadline)
                             .fontWeight(.light)
-
-                        Spacer()
 
                         VStack(spacing: 16) {
                             OnboardFeatureItem("hourglass", "Instant insight", "Quickly see your current and past levels without thinking")
                             OnboardFeatureItem("hourglass", "Instant insight", "Quickly see your current and past levels without thinking")
                             OnboardFeatureItem("hourglass", "Instant insight", "Quickly see your current and past levels without thinking")
                         }
-
-                        Spacer()
+                        .padding(.vertical, 32)
 
                         ThemedNavigationButton("Get started", ConnectionTypeView())
                     }
                     .padding(16)
                 }
-                .foregroundStyle(prefs.theme.textColor)
+                .padding(.top, 32)
             }
         }
+        .foregroundStyle(prefs.theme.textColor)
     }
 }
 
@@ -69,6 +68,7 @@ struct OnboardFeatureItem: View {
                     .fontWeight(.semibold)
 
                 Text(description)
+                    .fixedSize(horizontal: false, vertical: true)
                     .font(.footnote)
                     .fontWeight(.light)
             }

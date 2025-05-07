@@ -7,32 +7,61 @@ struct ConnectionTypeView: View {
     var body: some View {
         ThemedScreen {
             VStack {
+                Image("OnboardConnection")
+                    .resizable()
+                    .scaledToFit()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.top, 32)
+                    .padding(.horizontal, 32)
+
                 Spacer()
-                Picker("Server type", selection: $model.connectionType) {
-                    Text("SugarScope").tag(DataSourceType.sugarscope)
-                    Text("Nightscout").tag(DataSourceType.nightscout)
+
+                ThemedSection {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Connection type")
+                            .font(.title)
+                            .fontWeight(.semibold)
+
+                        Text("In order to retrieve your blood glucose values, we need to connect to a cloud service.")
+                            .lineLimit(nil)
+                            .font(.subheadline)
+                            .fontWeight(.light)
+
+                        VStack(alignment: .leading, spacing: 16) {
+                            Text("Are you using Nightscout or SugarScope to store your blood glucose values?")
+                                .lineLimit(nil)
+                                .font(.subheadline)
+                                .fontWeight(.light)
+
+                            Picker("Server type", selection: $model.connectionType) {
+                                Text("SugarScope").tag(DataSourceType.sugarscope)
+                                Text("Nightscout").tag(DataSourceType.nightscout)
+                            }
+                            .onAppear {
+                                UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(prefs.theme.accentColor)
+                                UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(prefs.theme.indicatorLabelColor)], for: .selected)
+                                UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(prefs.theme.textColor)], for: .normal)
+                                UISegmentedControl.appearance().backgroundColor = UIColor(prefs.theme.surfaceColor)
+                            }
+                            .pickerStyle(.segmented)
+                            .padding(.horizontal, 0)
+                        }
+                        .padding(.horizontal, 0)
+                        .padding(.vertical, 32)
+                        .padding(.bottom, 16)
+
+                        ThemedNavigationButton("Continue", ConnectionUrlView())
+                    }
+                    .padding(16)
                 }
-                .onAppear {
-                    UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(prefs.theme.accentColor)
-                    UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(prefs.theme.indicatorLabelColor)], for: .selected)
-                    UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(prefs.theme.textColor)], for: .normal)
-                    UISegmentedControl.appearance().backgroundColor = UIColor(prefs.theme.surfaceColor)
-                }
-                .pickerStyle(.segmented)
-                Spacer()
-                NavigationLink(destination: ConnectionUrlView()) {
-                    Text("Next")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(prefs.theme.accentColor)
+                .padding(.top, 32)
             }
-            .foregroundStyle(prefs.theme.textColor)
-            .padding(32)
         }
+        .foregroundStyle(prefs.theme.textColor)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text(SugarScopeApp.APP_NAME)
+                    .minimumScaleFactor(0.5)
                     .font(.title)
                     .foregroundStyle(prefs.theme.textColor)
             }
