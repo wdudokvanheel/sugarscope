@@ -10,6 +10,13 @@ protocol DataSource {
 enum DataSourceType: String, Codable {
     case sugarscope
     case nightscout
+
+    var formattedName: String {
+        switch self {
+        case .sugarscope: return "SugarScope"
+        case .nightscout: return "Nightscout"
+        }
+    }
 }
 
 enum NetworkError: Error {

@@ -23,13 +23,13 @@ struct ConnectionTypeView: View {
                             .fontWeight(.semibold)
 
                         Text("In order to retrieve your blood glucose values, we need to connect to a cloud service.")
-                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
                             .font(.subheadline)
                             .fontWeight(.light)
 
                         VStack(alignment: .leading, spacing: 16) {
                             Text("Are you using Nightscout or SugarScope to store your blood glucose values?")
-                                .lineLimit(nil)
+                                .fixedSize(horizontal: false, vertical: true)
                                 .font(.subheadline)
                                 .fontWeight(.light)
 
@@ -48,7 +48,7 @@ struct ConnectionTypeView: View {
                         }
                         .padding(.horizontal, 0)
                         .padding(.vertical, 32)
-                        .padding(.bottom, 16)
+//                        .padding(.bottom, 16)
 
                         ThemedNavigationButton("Continue", ConnectionUrlView())
                     }
