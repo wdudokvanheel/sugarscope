@@ -18,7 +18,7 @@
 		2B1C9E892D5A4F4D00CA7861 /* NightscoutConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E882D5A4F4D00CA7861 /* NightscoutConfigurationView.swift */; };
 		2B1C9E8B2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E8A2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift */; };
 		2B1C9E8D2D5A518C00CA7861 /* DataSourceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C9E8C2D5A518C00CA7861 /* DataSourceConfiguration.swift */; };
-		2B2854012D57A2CE009E86E9 /* SugarScopeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854002D57A2CE009E86E9 /* SugarScopeApp.swift */; };
+		2B2854012D57A2CE009E86E9 /* GlucoScopeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854002D57A2CE009E86E9 /* GlucoScopeApp.swift */; };
 		2B2854032D57A2CE009E86E9 /* ColoredLineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2854022D57A2CE009E86E9 /* ColoredLineGraph.swift */; };
 		2B2854052D57A2D0009E86E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B2854042D57A2D0009E86E9 /* Assets.xcassets */; };
 		2B2854102D57A40E009E86E9 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B28540F2D57A40E009E86E9 /* Calendar.swift */; };
@@ -52,6 +52,8 @@
 		2B7CCCCE2DCB8C3A00A1AED5 /* ThemedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCCD2DCB8C3A00A1AED5 /* ThemedTextField.swift */; };
 		2B7CCCD02DCB8CFA00A1AED5 /* ThemedSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCCF2DCB8CFA00A1AED5 /* ThemedSecureField.swift */; };
 		2B7CCCD22DCB988D00A1AED5 /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCCD12DCB988D00A1AED5 /* ThemedButton.swift */; };
+		2B8C01B92DCCAD1C0091BED2 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C01B82DCCAD190091BED2 /* AboutView.swift */; };
+		2B8C01BD2DCCAE5D0091BED2 /* ProjectVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C01BC2DCCAE520091BED2 /* ProjectVersion.swift */; };
 		2BAA50F82DAE5FCA003981B0 /* GraphRangeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA50F72DAE5FBC003981B0 /* GraphRangeSelector.swift */; };
 		2BAA50FA2DAE703E003981B0 /* GraphOverlayMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA50F92DAE703E003981B0 /* GraphOverlayMenu.swift */; };
 		2BAA50FC2DAE9716003981B0 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA50FB2DAE9716003981B0 /* ThemeSettingsView.swift */; };
@@ -70,8 +72,8 @@
 		2B1C9E882D5A4F4D00CA7861 /* NightscoutConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutConfigurationView.swift; sourceTree = "<group>"; };
 		2B1C9E8A2D5A4F5800CA7861 /* SugarScopeConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarScopeConfigurationView.swift; sourceTree = "<group>"; };
 		2B1C9E8C2D5A518C00CA7861 /* DataSourceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceConfiguration.swift; sourceTree = "<group>"; };
-		2B2853FD2D57A2CE009E86E9 /* SugarScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SugarScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B2854002D57A2CE009E86E9 /* SugarScopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarScopeApp.swift; sourceTree = "<group>"; };
+		2B2853FD2D57A2CE009E86E9 /* GlucoScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlucoScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B2854002D57A2CE009E86E9 /* GlucoScopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoScopeApp.swift; sourceTree = "<group>"; };
 		2B2854022D57A2CE009E86E9 /* ColoredLineGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredLineGraph.swift; sourceTree = "<group>"; };
 		2B2854042D57A2D0009E86E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B28540F2D57A40E009E86E9 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
@@ -106,6 +108,8 @@
 		2B7CCCCD2DCB8C3A00A1AED5 /* ThemedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedTextField.swift; sourceTree = "<group>"; };
 		2B7CCCCF2DCB8CFA00A1AED5 /* ThemedSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedSecureField.swift; sourceTree = "<group>"; };
 		2B7CCCD12DCB988D00A1AED5 /* ThemedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedButton.swift; sourceTree = "<group>"; };
+		2B8C01B82DCCAD190091BED2 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		2B8C01BC2DCCAE520091BED2 /* ProjectVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectVersion.swift; sourceTree = "<group>"; };
 		2BAA50F72DAE5FBC003981B0 /* GraphRangeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphRangeSelector.swift; sourceTree = "<group>"; };
 		2BAA50F92DAE703E003981B0 /* GraphOverlayMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphOverlayMenu.swift; sourceTree = "<group>"; };
 		2BAA50FB2DAE9716003981B0 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 		2B1C9E872D5A4F2D00CA7861 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				2B8C01B82DCCAD190091BED2 /* AboutView.swift */,
 				2B7667532DB28605008A2009 /* ConnectionSettingsView.swift */,
 				2BAA50FB2DAE9716003981B0 /* ThemeSettingsView.swift */,
 				2B16282B2DAD403800652A69 /* ThemeColorSettingsView.swift */,
@@ -199,7 +204,7 @@
 		2B2853FE2D57A2CE009E86E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B2853FD2D57A2CE009E86E9 /* SugarScope.app */,
+				2B2853FD2D57A2CE009E86E9 /* GlucoScope.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,7 +219,7 @@
 				2B1C9E7D2D5A16E800CA7861 /* Model */,
 				2B1C9E8E2D5A522C00CA7861 /* Service */,
 				2B1C9E782D5A15B000CA7861 /* View */,
-				2B2854002D57A2CE009E86E9 /* SugarScopeApp.swift */,
+				2B2854002D57A2CE009E86E9 /* GlucoScopeApp.swift */,
 				2B64B9782D75EF0400F0BC14 /* Info.plist */,
 				2B2854042D57A2D0009E86E9 /* Assets.xcassets */,
 			);
@@ -224,6 +229,7 @@
 		2B28540E2D57A3FF009E86E9 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				2B8C01BC2DCCAE520091BED2 /* ProjectVersion.swift */,
 				2B7667552DB29877008A2009 /* RoundedCorner.swift */,
 				2B1628272DAD002500652A69 /* ColorHex.swift */,
 				2B4BAB442DAA61B000D81158 /* Colors.swift */,
@@ -284,9 +290,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2B2853FC2D57A2CE009E86E9 /* SugarScope */ = {
+		2B2853FC2D57A2CE009E86E9 /* GlucoScope */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B28540B2D57A2D0009E86E9 /* Build configuration list for PBXNativeTarget "SugarScope" */;
+			buildConfigurationList = 2B28540B2D57A2D0009E86E9 /* Build configuration list for PBXNativeTarget "GlucoScope" */;
 			buildPhases = (
 				2B2853F92D57A2CE009E86E9 /* Sources */,
 				2B2853FA2D57A2CE009E86E9 /* Frameworks */,
@@ -299,9 +305,9 @@
 			fileSystemSynchronizedGroups = (
 				2BAA51032DAE9B97003981B0 /* Resources */,
 			);
-			name = SugarScope;
+			name = GlucoScope;
 			productName = SugarScope;
-			productReference = 2B2853FD2D57A2CE009E86E9 /* SugarScope.app */;
+			productReference = 2B2853FD2D57A2CE009E86E9 /* GlucoScope.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -332,7 +338,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B2853FC2D57A2CE009E86E9 /* SugarScope */,
+				2B2853FC2D57A2CE009E86E9 /* GlucoScope */,
 			);
 		};
 /* End PBXProject section */
@@ -375,7 +381,7 @@
 				2B1628282DAD002700652A69 /* ColorHex.swift in Sources */,
 				2B514CE82DB3A8FE00AC5A6A /* ThemeSwatch.swift in Sources */,
 				2B64B97A2D787BFE00F0BC14 /* IndicatorView.swift in Sources */,
-				2B2854012D57A2CE009E86E9 /* SugarScopeApp.swift in Sources */,
+				2B2854012D57A2CE009E86E9 /* GlucoScopeApp.swift in Sources */,
 				2B7CCCB92DCA0D3400A1AED5 /* IntroView.swift in Sources */,
 				2B1C9E7C2D5A162E00CA7861 /* GraphView.swift in Sources */,
 				2B2854122D57A718009E86E9 /* GlucoseMeasurement.swift in Sources */,
@@ -395,7 +401,9 @@
 				2B16282C2DAD403800652A69 /* ThemeColorSettingsView.swift in Sources */,
 				2B329DB12DB24C4900BDDDE1 /* ThemedSection.swift in Sources */,
 				2B4ED5BC2DA9507C00ADE664 /* SettingsView.swift in Sources */,
+				2B8C01BD2DCCAE5D0091BED2 /* ProjectVersion.swift in Sources */,
 				2B4BAB452DAA61B300D81158 /* Colors.swift in Sources */,
+				2B8C01B92DCCAD1C0091BED2 /* AboutView.swift in Sources */,
 				2B1C9E822D5A287100CA7861 /* DataSourceService.swift in Sources */,
 				2B7667542DB2860D008A2009 /* ConnectionSettingsView.swift in Sources */,
 				2BAA50FA2DAE703E003981B0 /* GraphOverlayMenu.swift in Sources */,
@@ -539,7 +547,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SugarScope/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SugarScope;
+				INFOPLIST_KEY_CFBundleDisplayName = GlucoScope;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -550,8 +558,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.8;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bitechular.prod.SugarScope;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.wdudokvanheel.glucoscope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -572,7 +580,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SugarScope/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SugarScope;
+				INFOPLIST_KEY_CFBundleDisplayName = GlucoScope;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -583,8 +591,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.8;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bitechular.prod.SugarScope;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.wdudokvanheel.glucoscope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -604,7 +612,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B28540B2D57A2D0009E86E9 /* Build configuration list for PBXNativeTarget "SugarScope" */ = {
+		2B28540B2D57A2D0009E86E9 /* Build configuration list for PBXNativeTarget "GlucoScope" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B28540C2D57A2D0009E86E9 /* Debug */,
