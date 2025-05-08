@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct SugarScopeApp: App {
-    public static let APP_NAME = "SugarScope"
+    public static let APP_NAME = "GlucoScope"
 
     private let preferences: PreferenceService
     private let dataService: DataSourceService

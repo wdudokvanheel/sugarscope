@@ -48,7 +48,6 @@ struct ConnectionTypeView: View {
                         }
                         .padding(.horizontal, 0)
                         .padding(.vertical, 32)
-//                        .padding(.bottom, 16)
 
                         ThemedNavigationButton("Continue", ConnectionUrlView())
                     }

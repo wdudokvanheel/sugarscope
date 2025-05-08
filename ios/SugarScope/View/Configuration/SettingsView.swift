@@ -17,7 +17,8 @@ struct SettingsView: View {
     private let tabs: [SettingsTab] = [
         SettingsTab(id: "theme", label: "Themes", icon: "paintpalette.fill"),
         SettingsTab(id: "bgvalues", label: "Glucose values", icon: "drop.fill"),
-        SettingsTab(id: "connection", label: "Connection", icon: "network")
+        SettingsTab(id: "connection", label: "Connection", icon: "network"),
+        SettingsTab(id: "about", label: "About", icon: "info")
     ]
 
     init() {
@@ -35,6 +36,8 @@ struct SettingsView: View {
                         ThemeSettingsView()
                     case "connection":
                         ConnectionSettingsView()
+                    case "about":
+                        AboutView()
                     default:
                         Text("Select a setting below")
                     }
